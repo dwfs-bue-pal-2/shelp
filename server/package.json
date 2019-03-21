@@ -1,7 +1,7 @@
 {
-  "name": "estructura-api",
+  "name": "shelp-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "web api for shelp application will provide information and features about restaurants and bars. Uses google maps api",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server",
