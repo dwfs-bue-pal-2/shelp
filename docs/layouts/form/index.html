@@ -1,0 +1,123 @@
+<html>
+
+<head>
+
+    <meta-charset="UTF-8">
+    <title>Modelo de form</title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+</head>
+
+<body>
+       
+        <section id="form">
+
+      
+              <h1>Agregar local</h1>
+      
+          <form id="alta-locales-form">
+      
+            <div class="rowTab">
+              <div class="labels"><label id="name_label">Nombre</label></div>
+              <div class="rightTab">
+                <input type="text" name="name" id="name" class="input-field"></input>
+              </div>
+      
+            </div>
+
+            <div class="rowTab">
+              <div class="labels">
+                <label for="comments"> Breve descripción </label></div>
+      
+              <div class="rightTab">
+                <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment"> </textarea></div>
+      
+            </div>
+            
+      
+            <div class="rowTab">
+              <div class="labels"><label id="direccion"></label>Dirección</label></div>
+              <div class="rightTab">
+                <input type="etext" name="direccion" id="direccion" class="input-field" required></input>
+                <div class="location">Mi ubicación <i class="fas fa-map-marker-alt"></i></div>
+              </div>
+            </div>
+      
+           
+            <div class="rowTab">
+              <div class="labels"><label id="tipo de cocina">Tipo de cocina
+            </label> </div>
+              <div class="rightTab">
+                <select id="dropdown" name="currentPos" class="dropdown">
+            <option disabled value>Select an option</option>
+            <option value="student">Comida rápida</option>
+              <option value="job">Vegetariana</option>
+              <option value="learner">Cocina de autor</option>
+              <option value="preferNo">Asiática</option>
+              <option value="other">Otros</option>
+            </select>
+              </div>
+            </div>
+      
+            <div class="rowTab">
+              <div class="labels">
+                <label for="aptoCeliacos"> Apto celíacos </label></div>
+              <div class="rightTab">
+                
+                 
+                    <label class="container">
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                
+              
+              </div>
+            </div>
+
+            <div class="rowTab">
+              <div class="labels"><label id="direccion"></label>Horario</label></div>
+              <div class="rightTab">
+                <input type="text" name="" id="horario" class="input-field" required></input>
+              </div>
+            </div>
+
+            <div class="rowTab">
+              <div class="labels"><label id="puntuacion"></label>Puntuación</label></div>
+              <div class="rightTab">
+                <input class="star" type="checkbox" title="bookmark page">
+                <input class="star" type="checkbox" title="bookmark page">
+                <input class="star" type="checkbox" title="bookmark page">
+                <input class="star" type="checkbox" title="bookmark page">
+                <input class="star" type="checkbox" title="bookmark page">
+              </div>
+            </div>
+
+            
+            <div class="rowTab" id="lastRow">
+              <div class="labels"><label id="cargarImagen"></label>Cargar imagen</label></div>
+              
+
+                <div class="rightTab">
+                    <label class="custom-file-upload">
+                    <div class="container"><i class="fas fa-file-upload icon"></i></div>                    
+              
+                 <input type="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                    </label>
+
+               
+              </div>
+            </div>
+         
+         
+      
+
+          
+           
+            <button id="button" type="cancel">Cancelar</button>
+            <button id="button" type="submit">Enviar</button>
+      
+          </form>
+        </section>
+      </body>
+      
+      </html>
