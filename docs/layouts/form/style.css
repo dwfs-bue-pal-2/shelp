@@ -1,0 +1,252 @@
+div {
+  display: block;
+}
+
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 40px;
+  background-color: #ced5e0;
+  text-align: center;
+  font-family: "Raleway", Helvetica, sans-serif;
+  min-width: 320px;
+  color: #475262;
+}
+
+html {
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
+    Sans-Serif;
+  line-height: 1.5;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+h1 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  color: #6b7b8e;
+}
+.labels {
+  display: inline-block;
+  text-align: left;
+  width: 30%;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 6%;
+}
+
+.input-field {
+  height: 5%;
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #6b7b8e;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.rightTab {
+  display: inline-block;
+  text-align: left;
+  width: 40%;
+  vertical-align: middle;
+  padding-right: 5%;
+}
+
+.dropdown {
+  height: 5%;
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 5%;
+  border: 1% solid #6b7b8e;
+  border-radius: 5px;
+}
+
+.location {
+  height: 5%;
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+}
+
+input[type="checkbox" i] {
+  -webkit-appearance: checkbox;
+  box-sizing: border-box;
+}
+input[type="radio"] {
+  box-sizing: border-box;
+}
+
+#loadImg {
+  padding-right: 10%;
+}
+
+#button {
+  background-color: #475262;
+  border-radius: 4px;
+  color: white;
+  font-size: 1em;
+  height: 40px;
+  width: 96px;
+  margin: 10px;
+  border: 0px solid;
+}
+#form {
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 4px;
+  width: 40%;
+  max-width: 900px;
+  padding: 10px;
+  padding-top: 20px;
+  border: 1px solid #eee;
+}
+
+button:hover {
+  animation-name: background-color;
+  animation-duration: 500ms;
+  /* add your code below this line */
+  animation-fill-mode: forwards;
+  /* add your code above this line */
+}
+@keyframes background-color {
+  100% {
+    background-color: #c0d1cf;
+  }
+}
+#title {
+  color: rgb(250, 250, 250);
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 20%;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+#form {
+  margin-top: 5em;
+}
+.star {
+  visibility: hidden;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 4%;
+}
+.star:before {
+  content: "\2605";
+  position: absolute;
+  visibility: visible;
+  color: #c0d1cf;
+}
+.star:checked:before {
+  content: "\2606";
+  position: absolute;
+}
+
+/* Checkbox */
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #f4f9f4;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #f4f9f4;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #475262;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+i {
+  color: #475262;
+}
+
+#lastRow {
+  margin-bottom: 4%;
+  margin-top: 2%;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+input[type="file"] {
+  display: none;
+}
