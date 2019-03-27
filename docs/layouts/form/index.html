@@ -13,7 +13,31 @@
 <body>
   
        
-        <div id="shops"><section id="form">
+        <div id="shops">
+          
+          <form method="get" action="/search" id="header-find" class="search">
+              
+              <div class="search_input_wrapper">
+                <span class="input_text">Buscar</span> </div>
+              
+                <div class="input_field_wrapper"> 
+                 <span class="input_field">
+                 <input type="text" class="input_field" name="finder" id="finder">
+                </span></div>
+            
+                <div class="location-item">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i></div>
+                  </div>
+            
+              
+      
+         
+            
+
+          </form>
+          
+          
+          <section id="form">
 
 
       
@@ -40,7 +64,7 @@
             
       
             <div class="rowTab">
-              <div class="labels"><label id="direccion"></label>Dirección</label></div>
+              <div class="labels"><label>Dirección</label></div>
               <div class="rightTab">
 
                 <input type="text" name="direccion" id="direccion" class="input-field" required></input>
@@ -57,7 +81,7 @@
             </div>
 
             <div class="rowTab">
-              <div class="labels"><label id="telefono"></label>Telefono</label></div>
+              <div class="labels"><label>Telefono</label></div>
               <div class="rightTab">
                 <input type="tel" name="telefono" id="telefono" class="input-field" required></input>
               </div>
@@ -68,7 +92,7 @@
       
            
             <div class="rowTab">
-              <div class="labels"><label id="tipo de cocina">Tipo de cocina
+              <div class="labels"><label>>Tipo de cocina
             </label> </div>
               <div class="rightTab">
                 <select id="dropdown" name="currentPos" class="dropdown">
@@ -87,7 +111,7 @@
 
 
             <div class="rowTab">
-              <div class="labels"><label id="direccion"></label>Horario</label></div>
+              <div class="labels"><label>Horario</label></div>
               <div class="rightTab">
                 <input type="text" name="" id="horario" class="input-field" required></input>
               </div>
@@ -98,68 +122,16 @@
                 <div class="labels"><label id="puntuacion"></label>Puntuación</label></div>
                 <div class="rightTab">
                     <fieldset class="rating">
-                      <input type="radio" id="star5" name="rating" value="5" /><label
-                        class="full"
-                        for="star5"
-                        title="Awesome - 5 stars"
-                      ></label>
-                      <input
-                        type="radio"
-                        id="star4half"
-                        name="rating"
-                        value="4 and a half"
-                      /><label
-                        class="half"
-                        for="star4half"
-                        title="Pretty good - 4.5 stars"
-                      ></label>
-                      <input type="radio" id="star4" name="rating" value="4" /><label
-                        class="full"
-                        for="star4"
-                        title="Pretty good - 4 stars"
-                      ></label>
-                      <input
-                        type="radio"
-                        id="star3half"
-                        name="rating"
-                        value="3 and a half"
-                      /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                      <input type="radio" id="star3" name="rating" value="3" /><label
-                        class="full"
-                        for="star3"
-                        title="Meh - 3 stars"
-                      ></label>
-                      <input
-                        type="radio"
-                        id="star2half"
-                        name="rating"
-                        value="2 and a half"
-                      /><label
-                        class="half"
-                        for="star2half"
-                        title="Kinda bad - 2.5 stars"
-                      ></label>
-                      <input type="radio" id="star2" name="rating" value="2" /><label
-                        class="full"
-                        for="star2"
-                        title="Kinda bad - 2 stars"
-                      ></label>
-                      <input
-                        type="radio"
-                        id="star1half"
-                        name="rating"
-                        value="1 and a half"
-                      /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                      <input type="radio" id="star1" name="rating" value="1" /><label
-                        class="full"
-                        for="star1"
-                        title="Sucks big time - 1 star"
-                      ></label>
-                      <input type="radio" id="starhalf" name="rating" value="half" /><label
-                        class="half"
-                        for="starhalf"
-                        title="Sucks big time - 0.5 stars"
-                      ></label>
+                      <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"></label>
+                      <input type="radio" id="star4half" name="rating"/><label class="half" for="star4half"></label>
+                      <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" ></label>
+                      <input type="radio" id="star3half" name="rating"/><label class="half" for="star3half"></label>
+                      <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"></label>
+                      <input type="radio" id="star2half"mname="rating" value="2 and a half"/><label class="half" for="star2half" ></label>
+                      <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"></label>
+                      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half"></label>
+                      <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"></label>
+                      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half"for="starhalf" ></label>
                       </fieldset>
                       </div>
 
@@ -172,7 +144,7 @@
                     <label class="custom-file-upload">
                     <div class="container"><i class="fas fa-file-upload icon"></i></div>                    
               
-                 <input type="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                 <input type="file" id="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
                     </label>
 
                
