@@ -2,24 +2,35 @@
 <html>
   <head>
     <title>Simple Map</title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
+      integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y"
+      crossorigin="anonymous"
+    />
+
     <meta name="viewport" content="initial-scale=1.0" />
     <meta charset="utf-8" />
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
   </head>
   <body>
+    <div id="shops">
+      <form method="get" action="/search" id="header-find" class="search">
+        <div class="search_input_wrapper">
+          <span class="input_text">Buscar</span>
+        </div>
+
+        <div class="input_field_wrapper">
+          <span class="input_field">
+            <input type="text" class="input_field" name="finder" id="finder" />
+          </span>
+        </div>
+
+        <div class="location-item">
+          <div class="location"><i class="fas fa-map-marker-alt"></i></div>
+        </div>
+      </form>
+    </div>
     <div id="map"></div>
     <script>
       var map;

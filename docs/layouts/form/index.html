@@ -13,7 +13,31 @@
 <body>
   
        
-        <div id="shops"><section id="form">
+        <div id="shops">
+          
+          <form method="get" action="/search" id="header-find" class="search">
+              
+              <div class="search_input_wrapper">
+                <span class="input_text">Buscar</span> </div>
+              
+                <div class="input_field_wrapper"> 
+                 <span class="input_field">
+                 <input type="text" class="input_field" name="finder" id="finder">
+                </span></div>
+            
+                <div class="location-item">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i></div>
+                  </div>
+            
+              
+      
+         
+            
+
+          </form>
+          
+          
+          <section id="form">
 
 
       
@@ -98,16 +122,16 @@
                 <div class="labels"><label id="puntuacion"></label>Puntuación</label></div>
                 <div class="rightTab">
                     <fieldset class="rating">
-                      <input type="radio" id="star5" name="rating" data-value="5" />
-                      <input type="radio" id="star4half" name="rating" data-value="4 and a half"/>
-                      <input type="radio" id="star4" name="rating" data-value="4" />
-                      <input type="radio"id="star3half" name="rating" data-value="3 and a half"/>
-                      <input type="radio" id="star3" name="rating" data-value="3" />
-                      <input type="radio" id="star2half"name="rating" data-value="2 and a half"/>
-                      <input type="radio" id="star2" name="rating" data-value="2" />
-                      <input type="radio" id="star1half" name="rating" data-value="1 and a half"/>
-                      <input type="radio" id="star1" name="rating" data-value="1" />
-                      <input type="radio" id="starhalf" name="rating" data-value="half" />
+                      <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"></label>
+                      <input type="radio" id="star4half" name="rating"/><label class="half" for="star4half"></label>
+                      <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" ></label>
+                      <input type="radio" id="star3half" name="rating"/><label class="half" for="star3half"></label>
+                      <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"></label>
+                      <input type="radio" id="star2half"mname="rating" value="2 and a half"/><label class="half" for="star2half" ></label>
+                      <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"></label>
+                      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half"></label>
+                      <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"></label>
+                      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half"for="starhalf" ></label>
                       </fieldset>
                       </div>
 
