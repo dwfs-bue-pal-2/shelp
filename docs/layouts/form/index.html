@@ -4,7 +4,7 @@
 
     <meta-charset="UTF-8">
     <title>Modelo de form</title>
-    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 
 
@@ -14,8 +14,7 @@
   
        
         <div id="shops">
-          
-          <form method="get" action="/search" id="header-find" class="search">
+           <form method="get" action="/search" id="header-find" class="search">
               
               <div class="search_input_wrapper">
                 <span class="input_text">Buscar</span> </div>
@@ -28,22 +27,12 @@
                 <div class="location-item">
                     <div class="location"><i class="fas fa-map-marker-alt"></i></div>
                   </div>
-            
-              
-      
-         
-            
-
-          </form>
+              </form>
           
           
           <section id="form">
-
-
-      
-              <h1>Agregar local</h1>
-      
-          <form id="alta-locales-form">
+            <h1>Agregar local</h1>
+               <form id="alta-locales-form">
       
             <div class="rowTab">
               <div class="labels"><label id="name_label">Nombre</label></div>
@@ -92,7 +81,7 @@
       
            
             <div class="rowTab">
-              <div class="labels"><label>>Tipo de cocina
+              <div class="labels"><label>Tipo de cocina
             </label> </div>
               <div class="rightTab">
                 <select id="dropdown" name="currentPos" class="dropdown">
@@ -153,13 +142,29 @@
 
       
             <button id="cancel" type="cancel">Cancelar</button>
-            <button id="send" type="submit">Enviar</button>
+            <button id="send" href="#open-modal" type="submit">Enviar</button>
       
           </form>
         </section>
+
+        <div class="container">
+          <div class="interior">
+            <a class="btn" href="#open-modal"><i class="fas fa-external-link-alt"></i> Basic CSS-Only Modal</a>
+          </div>
+        </div>
+
+        <div id="open-modal" class="modal-window">
+          <div>
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Voilà!</h1>
+            <div>Modal Modal Modal Modal Modal Modal Modal Modal Modal </div>
+            </div>
+        </div>
       </div>
 
       <div id="map"></div>
+
+      
 
 
       <script>
@@ -172,7 +177,7 @@
           }
           
         </script>
-        <script src="mapa.js"></script>
+        <script src="js/mapa.js"></script>
     
         <script
           src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&callback=inicializarMapa"
