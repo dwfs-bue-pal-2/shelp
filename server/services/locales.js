@@ -3,7 +3,7 @@ var db = require("../util/db");
 function Service() {
   
   this.getAll = async (req, res) => {
-    var query = "SELECT * FROM locales";
+    var query = "SELECT * FROM shops";
     var result = await db.query(query);
     return result;
   };
