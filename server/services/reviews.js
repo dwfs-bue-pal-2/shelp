@@ -5,8 +5,9 @@ function Service() {
     var query =
       "SELECT u.name as user, s.name as shop, score, comment, date FROM reviews r JOIN shops s ON shop_id=s.id JOIN users u ON user_id=u.id WHERE shop_id = " +
       id +
-      "AND active=1;";
+      " AND r.active=1;";
     db.query(query, (error, resp) => {
+      console.log(query);
       if (error) {
         res.status(500).send("Error en la base de datos");
       }
@@ -15,7 +16,7 @@ function Service() {
   };
   this.getByUser = (id, res) => {
     var query =
-      "SELECT u.name as user, s.name as shop, score, comment, date FROM reviews r JOIN shops s ON shop_id=s.id JOIN users u ON user_id=u.id WHERE user_id = " +id +"AND active=1;";
+      "SELECT u.name as user, s.name as shop, score, comment, date FROM reviews r JOIN shops s ON shop_id=s.id JOIN users u ON user_id=u.id WHERE user_id = " +id +" AND r.active=1;";
     db.query(query, (error, resp) => {
       if (error) {
         res.status(500).send("Error en la base de datos");
