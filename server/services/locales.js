@@ -5,22 +5,52 @@ function Service() {
   this.getAll = async (req, res) => {
     var query = "SELECT * FROM shops";
     var result = await db.query(query);
-    return result;
+    var response = [];
+    for (var i=0;i<result.length;i++){
+      response.push({
+          "id": result[i].id,
+          "name": result[i].name,
+          "image": result[i].image,
+          "address": result[i].address,
+          "phone": result[i].phone,
+          "type": result[i].type,
+          "description": result[i].description,
+          "hours": result[i].hours,
+          "score": "4"
+      })
+    }
+    return response;
+  };
+
+  this.getById = async (id, res) => {
+    var query = "SELECT * FROM shops WHERE id="+id+";";
+    var result = await db.query(query);
+    return {
+          "id": result[0].id,
+          "name": result[0].name,
+          "image": result[0].image,
+          "address": result[0].address,
+          "phone": result[0].phone,
+          "type": result[0].type,
+          "description": result[0].description,
+          "hours": result[0].hours,
+          "score": "4"
+    };
   };
 
   this.post = async (req, res) => {
     var query = "INSERT INTO shops (name, image, addres, phone, type, description, hours) VALUES (?,?,?,?,?,?,?)";
     var newShop = req.body;
 
-    var name = newShop.nombre;
-    var img = newShop.imagen;
-    var address = newShop.direccion;
-    var phone = newShop.telefono;
-    var type = newShop.tipo;
-    var description = newShop.descripcion;
-    var schedule = newShop.horario;
+    var name = newShop.name;
+    var img = newShop.image;
+    var address = newShop.address;
+    var phone = newShop.phone;
+    var type = newShop.type;
+    var description = newShop.description;
+    var hours = newShop.hours;
 
-    var result = await db.query(query, [name, img, address, phone, type, description, schedule], 
+    var result = await db.query(query, [name, img, address, phone, type, description, hours], 
     
       function(error, results, fields){
         if(error){
@@ -36,9 +66,9 @@ function Service() {
     var query = ` UPDATE shops SET name = ? , image = ?, 
                   addres = ?, phone = ?, type = ?, description = ?, 
                   hours = ? WHERE id = ? `;
-    var data = [req.body.nombre, req.body.imagen, req.body.direccion, 
-                req.body.telefono, req.body.tipo, req.body.descripcion, 
-                req.body.horario, req.params.id];
+    var data = [req.body.name, req.body.image, req.body.address, 
+                req.body.phone, req.body.type, req.body.description, 
+                req.body.hours, req.params.id];
 
     var result = await db.query(query, data, function(error, results, fields){
       if(error){
