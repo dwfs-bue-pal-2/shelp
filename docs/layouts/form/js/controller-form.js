@@ -4,18 +4,18 @@ $(document).ready(function() {
         e.preventDefault();
 
         var name = $("#name").val();
-        var comments = $("#comments").val();
+        var description = $("#comments").val();
         var address = $("#direccion").val();
         var phone = $("#telefono").val();
-        var typeFood = $("#dropdown").val();
+        var type = $("#dropdown").val();
         var rating = $("input[name='rating']:checked").val();
-        var hours = $("#horario").val();
-        var image = $("#file").val();
+        var schedule = $("#horario").val();
+        var img = $("#file").val();
 
-        if (name && comments && address && typeFood && phone && rating && hours ) {
+        if (name && description && address && type && phone && rating && schedule ) {
 
-           $.post("https://private-29c6c-federicoolivarez.apiary-mock.com/locales", { name: name, comments:comments,
-                address: address,phone: phone,typeFood: typeFood, rating:rating, hours:hours, image:image },
+           $.post("https://private-29c6c-federicoolivarez.apiary-mock.com/locales", { name: name, description:description,
+                address: address,phone: phone,type: type, rating:rating, schedule:schedule, img:img },
                 function(data,status) {
                     console.log(" Status: " + status);
                     if (status == 'success') {
