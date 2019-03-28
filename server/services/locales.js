@@ -22,6 +22,22 @@ function Service() {
     return response;
   };
 
+  this.getById = async (id, res) => {
+    var query = "SELECT * FROM shops WHERE id="+id+";";
+    var result = await db.query(query);
+    return {
+          "id": result[0].id,
+          "name": result[0].name,
+          "image": result[0].image,
+          "address": result[0].address,
+          "phone": result[0].phone,
+          "type": result[0].type,
+          "description": result[0].description,
+          "hours": result[0].hours,
+          "score": "4"
+    };
+  };
+
   this.post = async (req, res) => {
     var query = "INSERT INTO shops (name, image, addres, phone, type, description, hours) VALUES (?,?,?,?,?,?,?)";
     var newShop = req.body;
