@@ -9,13 +9,13 @@ $(document).ready(function() {
         var phone = $("#telefono").val();
         var type = $("#dropdown").val();
         var rating = $("input[name='rating']:checked").val();
-        var schedule = $("#horario").val();
+        var hours = $("#horario").val();
         var img = $("#file").val();
 
         if (name && description && address && type && phone && rating && schedule ) {
 
            $.post("https://private-29c6c-federicoolivarez.apiary-mock.com/locales", { name: name, description:description,
-                address: address,phone: phone,type: type, rating:rating, schedule:schedule, img:img },
+                address: address,phone: phone,type: type, rating:rating, hours:hours, img:img },
                 function(data,status) {
                     console.log(" Status: " + status);
                     if (status == 'success') {
