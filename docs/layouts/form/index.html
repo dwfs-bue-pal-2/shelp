@@ -6,11 +6,39 @@
     <title>Modelo de form</title>
     <link type="text/css" href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
-</head>
+
+
+  </head>
 
 <body>
-       
-        <section id="form">
+  
+
+        <div id="shops">
+          
+          <form method="get" action="/search" id="header-find" class="search">
+              
+              <div class="search_input_wrapper">
+                <span class="input_text">Buscar</span> </div>
+              
+                <div class="input_field_wrapper"> 
+                 <span class="input_field">
+                 <input type="text" class="input_field" name="finder" id="finder">
+                </span></div>
+            
+                <div class="location-item">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i></div>
+                  </div>
+            
+              
+      
+         
+            
+
+          </form>
+          
+          
+          <section id="form">
+
 
       
               <h1>Agregar local</h1>
@@ -22,7 +50,6 @@
               <div class="rightTab">
                 <input type="text" name="name" id="name" class="input-field"></input>
               </div>
-      
             </div>
 
             <div class="rowTab">
@@ -36,61 +63,76 @@
             
       
             <div class="rowTab">
-              <div class="labels"><label id="direccion"></label>Dirección</label></div>
+              <div class="labels"><label>Dirección</label></div>
               <div class="rightTab">
-                <input type="etext" name="direccion" id="direccion" class="input-field" required></input>
-                <div class="location">Mi ubicación <i class="fas fa-map-marker-alt"></i></div>
+
+                <input type="text" name="direccion" id="direccion" class="input-field" required></input>
               </div>
             </div>
+            <div class="rowTab">
+              .<div class="rightTab">
+                  <div class="location">Mi ubicación <i class="fas fa-map-marker-alt"></i></div>
+
+                </div>
+            
+
+          
+            </div>
+
+            <div class="rowTab">
+              <div class="labels"><label>Telefono</label></div>
+              <div class="rightTab">
+                <input type="tel" name="telefono" id="telefono" class="input-field" required></input>
+              </div>
+            </div>
+
+
+
       
            
             <div class="rowTab">
-              <div class="labels"><label id="tipo de cocina">Tipo de cocina
+              <div class="labels"><label>>Tipo de cocina
             </label> </div>
               <div class="rightTab">
                 <select id="dropdown" name="currentPos" class="dropdown">
             <option disabled value>Select an option</option>
-            <option value="student">Comida rápida</option>
-              <option value="job">Vegetariana</option>
-              <option value="learner">Cocina de autor</option>
-              <option value="preferNo">Asiática</option>
-              <option value="other">Otros</option>
+
+            <option value="comida-rapida">Comida rápida</option>
+              <option value="vegetariana">Vegetariana</option>
+              <option value="cocina-de-autor">Cocina de autor</option>
+              <option value="asiatica">Asiática</option>
+              <option value="otros">Otros</option>
+
             </select>
               </div>
             </div>
       
-            <div class="rowTab">
-              <div class="labels">
-                <label for="aptoCeliacos"> Apto celíacos </label></div>
-              <div class="rightTab">
-                
-                 
-                    <label class="container">
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                
-              
-              </div>
-            </div>
+
 
             <div class="rowTab">
-              <div class="labels"><label id="direccion"></label>Horario</label></div>
+              <div class="labels"><label>Horario</label></div>
               <div class="rightTab">
                 <input type="text" name="" id="horario" class="input-field" required></input>
               </div>
             </div>
 
             <div class="rowTab">
-              <div class="labels"><label id="puntuacion"></label>Puntuación</label></div>
-              <div class="rightTab">
-                <input class="star" type="checkbox" title="bookmark page">
-                <input class="star" type="checkbox" title="bookmark page">
-                <input class="star" type="checkbox" title="bookmark page">
-                <input class="star" type="checkbox" title="bookmark page">
-                <input class="star" type="checkbox" title="bookmark page">
-              </div>
-            </div>
+
+                <div class="labels"><label id="puntuacion"></label>Puntuación</label></div>
+                <div class="rightTab">
+                    <fieldset class="rating">
+                      <input type="radio" id="star5" name="rating" value="5" ><label class="full" for="star5"></label>
+                      <input type="radio" id="star4half" name="rating" value="4.5"><label class="half" for="star4half"></label>
+                      <input type="radio" id="star4" name="rating" value="4" ><label class="full" for="star4" ></label>
+                      <input type="radio" id="star3half" name="rating" value="3.5"><label class="half" for="star3half"></label>
+                      <input type="radio" id="star3" name="rating" value="3" ><label class="full" for="star3"></label>
+                      <input type="radio" id="star2half" name="rating" value="2.5"><label class="half" for="star2half" ></label>
+                      <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2"></label>
+                      <input type="radio" id="star1half" name="rating" value="1.5" ><label class="half" for="star1half"></label>
+                      <input type="radio" id="star1" name="rating" value="1" ><label class="full" for="star1"></label>
+                      <input type="radio" id="starhalf" name="rating" value="0.5" ><label class="half"for="starhalf" ></label>
+                      </fieldset>
+                      </div>
 
             
             <div class="rowTab" id="lastRow">
@@ -101,23 +143,45 @@
                     <label class="custom-file-upload">
                     <div class="container"><i class="fas fa-file-upload icon"></i></div>                    
               
-                 <input type="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                 <input type="file" id="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
                     </label>
 
                
               </div>
             </div>
-         
-         
       
+            <button id="cancel" type="cancel">Cancelar</button>
 
-          
-           
-            <button id="button" type="cancel">Cancelar</button>
-            <button id="button" type="submit">Enviar</button>
+            <button id="send" type="submit">Enviar</button>
       
           </form>
         </section>
+
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="./js/controller-form.js"></script>
+
+      </div>
+
+      <div id="map"></div>
+
+
+      <script>
+          var map;
+          function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+              center: { lat: -34.397, lng: 150.644 },
+              zoom: 8
+            });
+          }
+          
+        </script>
+        <script src="mapa.js"></script>
+    
+        <script
+          src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&callback=inicializarMapa"
+          async
+          defer
+        ></script>
       </body>
       
       </html>

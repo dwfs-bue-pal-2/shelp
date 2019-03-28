@@ -7,7 +7,6 @@ function Service() {
       id +
       " AND r.active=1;";
     db.query(query, (error, resp) => {
-      console.log(query);
       if (error) {
         res.status(500).send("Error en la base de datos");
       }

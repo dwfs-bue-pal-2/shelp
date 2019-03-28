@@ -10,5 +10,5 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(port, function() {
-  console.log("Running app on port" + port);
+  console.log("Running app on port " + port);
 });

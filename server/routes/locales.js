@@ -14,6 +14,6 @@ router.post("/", ctl.post);
 
 router.put("/:id", ctl.put);
 
-router.delete("/id", ctl.deleteById); // no faltaria un ':' antes del id en la ruta?
+router.delete("/:id", ctl.deleteById);
 
 module.exports = router;

@@ -4,7 +4,7 @@ var srv = new service();
 
 function Controller() {
   this.getAll = async (req, res) => {
-    var result = await srv.getAll();
+    var result = await srv.getAll(req, res);
     res.status(200).send(JSON.stringify(result));
   };
 
@@ -18,22 +18,19 @@ function Controller() {
     srv.getById(id);
   };
 
-  this.post = (req, res) => {
-    service.post(req.body);
+  this.post = async (req, res) => {
+    var result =  await srv.post(req, res);
+    res.status(200).send(JSON.stringify(result));
   };
 
-  this.put = (req, res) => {
-    srv.put(req.body);
+  this.put = async (req, res) => {
+    var result = await srv.put(req, res);
+    res.status(200).send(JSON.stringify(result));
   };
 
-  this.deleteById = (req, res) => {
-    var id = req.body.id;
-
-    if (!id) {
-      res.status(404).send("Local no encontrado");
-      return;
-    }
-    srv.deleteById(id);
+  this.deleteById = async (req, res) => {
+   var result = await srv.deleteById(req, res);
+    res.status(200).send(JSON.stringify(result));
   };
 }
 
