@@ -12,7 +12,7 @@
 
 <body>
   
-       
+
         <div id="shops">
            <form method="get" action="/search" id="header-find" class="search">
               
@@ -39,7 +39,6 @@
               <div class="rightTab">
                 <input type="text" name="name" id="name" class="input-field"></input>
               </div>
-      
             </div>
 
             <div class="rowTab">
@@ -111,16 +110,16 @@
                 <div class="labels"><label id="puntuacion"></label>Puntuación</label></div>
                 <div class="rightTab">
                     <fieldset class="rating">
-                      <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"></label>
-                      <input type="radio" id="star4half" name="rating"/><label class="half" for="star4half"></label>
-                      <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" ></label>
-                      <input type="radio" id="star3half" name="rating"/><label class="half" for="star3half"></label>
-                      <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"></label>
-                      <input type="radio" id="star2half"mname="rating" value="2 and a half"/><label class="half" for="star2half" ></label>
-                      <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"></label>
-                      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half"></label>
-                      <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"></label>
-                      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half"for="starhalf" ></label>
+                      <input type="radio" id="star5" name="rating" value="5" ><label class="full" for="star5"></label>
+                      <input type="radio" id="star4half" name="rating" value="4.5"><label class="half" for="star4half"></label>
+                      <input type="radio" id="star4" name="rating" value="4" ><label class="full" for="star4" ></label>
+                      <input type="radio" id="star3half" name="rating" value="3.5"><label class="half" for="star3half"></label>
+                      <input type="radio" id="star3" name="rating" value="3" ><label class="full" for="star3"></label>
+                      <input type="radio" id="star2half" name="rating" value="2.5"><label class="half" for="star2half" ></label>
+                      <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2"></label>
+                      <input type="radio" id="star1half" name="rating" value="1.5" ><label class="half" for="star1half"></label>
+                      <input type="radio" id="star1" name="rating" value="1" ><label class="full" for="star1"></label>
+                      <input type="radio" id="starhalf" name="rating" value="0.5" ><label class="half"for="starhalf" ></label>
                       </fieldset>
                       </div>
 
@@ -139,19 +138,17 @@
                
               </div>
             </div>
-
       
             <button id="cancel" type="cancel">Cancelar</button>
-            <button id="send" href="#open-modal" type="submit">Enviar</button>
+
+
+            <button id="send" type="submit">Enviar</button>
+
       
           </form>
         </section>
 
-        <!-- <div class="container">
-          <div class="interior">
-            <a class="btn" href="#open-modal"><i class="fas fa-external-link-alt"></i> Basic CSS-Only Modal</a>
-          </div>
-        </div> -->
+
 
         <div id="open-modal" class="modal-window">
           <div>
@@ -160,6 +157,7 @@
             <div>Modal Modal Modal Modal Modal Modal Modal Modal Modal </div>
             </div>
         </div>
+
       </div>
 
       <div id="map"></div>
@@ -177,15 +175,14 @@
           }
           
         </script>
-        <script src="js/mapa.js"></script>
-    
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="js/mapa.js"></script> 
+        <script src="./js/controller-form.js"></script>
         <script
           src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&callback=inicializarMapa"
           async
           defer
         ></script>
-        
-
       </body>
       
       </html>
