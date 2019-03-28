@@ -55,6 +55,13 @@ div {
   padding-bottom: 2%;
   border-radius: 10px;
   background-color: white;
+  height: 100vh;
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+#modal-row {
+  display: none;
 }
 
 .box {
