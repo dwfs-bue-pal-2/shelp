@@ -12,6 +12,7 @@ function inicializarMapa() {
     un centro igual a la variable posicionCentral. */
   mapa = new google.maps.Map(document.getElementById("map"), {
     center: centro,
-    zoom: 12
+    zoom: 12,
+    mapTypeControl: false
   });
 }
