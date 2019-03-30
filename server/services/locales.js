@@ -49,10 +49,10 @@ function Service() {
     var type = newShop.type;
     var description = newShop.description;
     var hours = newShop.hours;
-
     var result = await db.query(query, [name, img, address, phone, type, description, hours], 
-    
+      
       function(error, results, fields){
+        console.log(error)
         if(error){
             console.log("hubo un error en la consulta POST", error.message);
             return res.status(404).send("Hubo un error en la consulta POST");
