@@ -8,7 +8,9 @@ CREATE TABLE `shops`
 `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 `name` varchar(50) NOT NULL,
 `image` varchar(500),
-`addres` varchar(500) NOT NULL,
+`address` varchar(500) NOT NULL,
+`lat` FLOAT(10,6) NOT NULL DEFAULT 0,
+`lon` FLOAT(10,6) NOT NULL DEFAULT 0,
 `phone` int(30),
 `type` varchar(30),
 `description` varchar(700),
@@ -19,16 +21,16 @@ CREATE TABLE `shops`
 LOCK TABLES `shops` WRITE;
 INSERT INTO `shops`
 VALUES
-    (1, 'Chori', 11111111111111112, 'Thames 1653, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (2, 'Osaka', 11111111111111112, 'Soler 5608, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (3, 'Koh Lanta', 11111111111111112, 'Gorriti 4647, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (4, 'La choza de Gascon', 11111111111111112, 'Gascon 1701, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (5, 'Cooperativa Ale Ale', 11111111111111112, 'José A. Cabrera 4270, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (6, 'Sarkis', 11111111111111112, 'Thames 1101, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (7, 'Cantina Don Chicho En Palermo', 11111111111111112, 'Honduras 5710, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (8, 'El Peron Peron', 11111111111111112, 'Angel Justiniano Carranza 2225, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (9, 'Crizia Restaurante', 11111111111111112, 'Thames 1653, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (10, 'Chori', 11111111111111112, 'Gascon 1701, CABA.', 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1);
+    (1, 'Chori', 11111111111111112, 'Thames 1653, CABA.',-34.587678, -58.430562, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (2, 'Osaka', 11111111111111112, 'Soler 5608, CABA.',-34.580588, -58.432815, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (3, 'Koh Lanta', 11111111111111112, 'Gorriti 4647, CABA.',-34.591637, -58.427352, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (4, 'La choza de Gascon', 11111111111111112, 'Gascon 1701, CABA.',-34.589760, -58.422216, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (5, 'Cooperativa Ale Ale', 11111111111111112, 'José A. Cabrera 4270, CABA.',-34.594836, -58.425406, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (6, 'Sarkis', 11111111111111112, 'Thames 1101, CABA.',-34.591219, -58.436129, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (7, 'Cantina Don Chicho En Palermo', 11111111111111112, 'Honduras 5710, CABA.',-34.583051, -58.437633, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (8, 'El Peron Peron', 11111111111111112, 'Angel Justiniano Carranza 2225, CABA.',-34.578447, -58.433532, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (9, 'Crizia Restaurante', 11111111111111112, 'Gorriti 5143, CABA.',-34.588211, -58.432533, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (10, '1810 Cocina Regional', 11111111111111112, 'Julian Alvarez 1998, CABA.',-34.589168, -58.419248, 1148650030, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1);
 UNLOCK TABLES;
 
 USE `shelp`;

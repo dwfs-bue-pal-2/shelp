@@ -12,6 +12,7 @@ $(document).ready(function() {
         var hours = $("#horario").val();
         var img = $("#file").val();
 
+
         if (name && description && address && type && phone && hours) {
 
             $.post("http://localhost:3000/locales", {
@@ -24,6 +25,7 @@ $(document).ready(function() {
                     img: img
                 },
                 function(data, status) {
+
                     console.log(" Status: " + status);
                     if (status == 'success') {
                         alert('El local ' + name + ' fue dado de alta con exito!');
