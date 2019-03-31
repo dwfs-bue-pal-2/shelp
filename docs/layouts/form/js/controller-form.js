@@ -7,6 +7,8 @@ $(document).ready(function() {
         var name = $("#name").val();
         var description = $("#comments").val();
         var address = $("#direccion").val();
+        var lat = $("#direccion").data('lat');
+        var lon = $("#direccion").data('lon');
         var phone = $("#telefono").val();
         var type = $("#dropdown").val();
         var hours = $("#horario").val();
@@ -19,6 +21,8 @@ $(document).ready(function() {
                     name: name,
                     description: description,
                     address: address,
+                    lat: lat,
+                    lon: lon,
                     phone: phone,
                     type: type,
                     hours: hours,
