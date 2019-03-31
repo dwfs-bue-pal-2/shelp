@@ -12,9 +12,9 @@ $(document).ready(function() {
         var hours = $("#horario").val();
         var img = $("#file").val();
 
-        if (name && description && address && type && phone && rating && schedule ) {
+        if (name && description && address && type && phone && rating && hours ) {
 
-           $.post("https://private-29c6c-federicoolivarez.apiary-mock.com/locales", { name: name, description:description,
+           $.post("http://localhost:8008/locales", { name: name, description:description,
                 address: address,phone: phone,type: type, rating:rating, hours:hours, img:img },
                 function(data,status) {
                     console.log(" Status: " + status);
