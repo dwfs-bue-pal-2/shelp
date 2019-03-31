@@ -8,5 +8,5 @@
 
 Copiar el env-sample en un archivo .env y configurarlo con los valores correspondientes.
 Correr ScriptBD para generar la BD (Tener MySQL instalado).
-Correr npm install en /server/server.
-Correr npm run start en /server/server.
+Correr npm install en /server/ .
+Correr npm run start en /server/server .
