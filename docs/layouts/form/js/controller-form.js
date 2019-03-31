@@ -14,7 +14,7 @@ $(document).ready(function() {
 
         if (name && description && address && type && phone && rating && schedule ) {
 
-           $.post("https://private-29c6c-federicoolivarez.apiary-mock.com/locales", { name: name, description:description,
+           $.post("http://localhost:3000/locales", { name: name, description:description,
                 address: address,phone: phone,type: type, rating:rating, hours:hours, img:img },
                 function(data,status) {
                     console.log(" Status: " + status);
