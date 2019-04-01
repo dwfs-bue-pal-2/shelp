@@ -2,10 +2,10 @@ $(document).ready(() => {
     getShop = () => {
         $.ajax({   
             method: "GET",
-            url: "http://private-29c6c-federicoolivarez.apiary-mock.com/locales",
+            url: "http://localhost:3000/locales",
             success: function(data){
-               renderList(data);
-               console.log(data);
+               renderList(JSON.parse(data));
+               console.log(JSON.parse(data));
             }
         });
     }

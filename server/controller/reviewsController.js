@@ -53,6 +53,7 @@ function Controller() {
     }
     srv.deleteById(id, res);
   };
+  
 }
 
 module.exports = Controller;

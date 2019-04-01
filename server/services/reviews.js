@@ -15,7 +15,9 @@ function Service() {
   };
   this.getByUser = (id, res) => {
     var query =
-      "SELECT u.name as user, s.name as shop, score, comment, date FROM reviews r JOIN shops s ON shop_id=s.id JOIN users u ON user_id=u.id WHERE user_id = " +id +" AND r.active=1;";
+      "SELECT u.name as user, s.name as shop, score, comment, date FROM reviews r JOIN shops s ON shop_id=s.id JOIN users u ON user_id=u.id WHERE user_id = " +
+      id +
+      " AND r.active=1;";
     db.query(query, (error, resp) => {
       if (error) {
         res.status(500).send("Error en la base de datos");
@@ -26,7 +28,15 @@ function Service() {
 
   this.post = (params, res) => {
     var query =
-      "INSERT INTO reviews (user_id, shop_id, score, comment) VALUES (" +params.user+","+params.shop+"," +params.score +",'" +params.comment +"');";
+      "INSERT INTO reviews (user_id, shop_id, score, comment) VALUES (" +
+      params.user +
+      "," +
+      params.shop +
+      "," +
+      params.score +
+      ",'" +
+      params.comment +
+      "');";
     db.query(query, (error, resp) => {
       if (error) {
         res.status(500).send("Error en la base de datos");
@@ -44,9 +54,9 @@ function Service() {
     }
     if (params.comment) {
       if (multipleParams) {
-        query = query.concat(", comment='" + params.comment+"'");
+        query = query.concat(", comment='" + params.comment + "'");
       } else {
-        query = query.concat(" comment='" + params.comment+"'");
+        query = query.concat(" comment='" + params.comment + "'");
       }
     }
     query = query.concat(" WHERE id=" + id + ";");
@@ -59,14 +69,14 @@ function Service() {
   };
 
   this.deleteById = (id, res) => {
-    var query = "UPDATE reviews SET active=0 WHERE id="+id+";"
-    db.query(query,(error,resp)=>{
+    var query = "UPDATE reviews SET active=0 WHERE id=" + id + ";";
+    db.query(query, (error, resp) => {
       if (error) {
         res.status(500).send("Error en la base de datos");
       }
       res.status(200).send("Review eliminado");
     });
-  }
+  };
 }
 
 module.exports = Service;

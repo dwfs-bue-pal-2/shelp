@@ -1,8 +1,9 @@
 var db = require("../util/db");
-
+var reviewsService = require("./reviews");
+var revSrvc = new reviewsService();
 function Service() {
   this.getAll = async (req, res) => {
-    var query = "SELECT * FROM shops";
+    var query = "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s JOIN reviews r ON s.id = r.shop_id GROUP BY r.shop_id;";
     var result = await db.query(query);
     var response = [];
     for (var i = 0; i < result.length; i++) {
@@ -17,27 +18,27 @@ function Service() {
         type: result[i].type,
         description: result[i].description,
         hours: result[i].hours,
-        score: "4"
+        rating: result[i].score
       });
     }
     return response;
   };
 
   this.getById = async (id, res) => {
-    var query = "SELECT * FROM shops WHERE id=" + id + ";";
+    var query = "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s JOIN reviews r ON s.id = r.shop_id WHERE s.id="+ id +" GROUP BY r.shop_id;";
     var result = await db.query(query);
     return {
       id: result[0].id,
       name: result[0].name,
       image: result[0].image,
       address: result[0].address,
-      lat: result[i].lat,
-      lon: result[i].lon,
+      lat: result[0].lat,
+      lon: result[0].lon,
       phone: result[0].phone,
       type: result[0].type,
       description: result[0].description,
       hours: result[0].hours,
-      score: "4"
+      rating: result[0].score
     };
   };
 

@@ -87,7 +87,9 @@ VALUES
     (5,1,7,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1),   
     (6,5,7,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1),   
     (7,7,8,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1),   
-    (8,6,1,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1);   
+    (8,6,1,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1), 
+    (9,6,5,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1),  
+    (10,6,6,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1),   
+    (11,6,9,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1),   
+    (12,6,10,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1);   
 UNLOCK TABLES;
-
-
