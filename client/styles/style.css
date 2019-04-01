@@ -24,7 +24,7 @@ html {
   font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
     Sans-Serif;
   line-height: 1.5;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -42,16 +42,33 @@ div {
   z-index: 0;
 }
 
+/* Modal - shop-list - style */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
 #shops {
   position: relative;
   z-index: 1;
+  margin-left: 1%;
 }
 
 .container {
   width: 40%;
   margin-top: 2%;
   border: 1px solid grey;
-  padding-bottom: 2%;
+  padding: 2%;
   border-radius: 10px;
   background-color: white;
   height: 100vh;
@@ -71,6 +88,7 @@ div {
 
 .box {
   font-weight: bold;
+  padding: 4%;
 }
 
 .rowTab {
@@ -144,9 +162,273 @@ p {
   color: #6b7b8e;
 }
 h1 {
-  font-size: 2em;
+  font-size: 1.2em;
 }
 
 a {
   text-decoration: none;
+}
+
+/* The Close Button */
+.close,
+.closeList {
+  position: sticky;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+div.close {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.close:hover,
+.close:focus,
+.closeList:hover,
+.closeList:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Search bar - style */
+
+#search {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  margin-left: 4%;
+  width: 70%;
+  max-width: 900px;
+  border-radius: 10px;
+  border: 1px solid #d3d3d3;
+  margin-top: 1em;
+}
+
+.search_input_wrapper,
+.input_field_wrapper,
+.location-item,
+.view-list,
+.view-form {
+  display: inline-block;
+  text-align: left;
+  font-size: 1em;
+}
+.location {
+  margin: 2em;
+}
+
+.search-box {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  vertical-align: middle;
+}
+
+.search_input_wrapper {
+  width: 10%;
+  border-right: 1px solid #eee;
+}
+
+.input_field,
+.input_text {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.input_field_wrapper {
+  width: 50%;
+  height: 2em;
+}
+
+.home-btn {
+  border: 1px solid #d3d3d3;
+  background-color: white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+/****** Form *****/
+
+.labels {
+  display: inline-block;
+  text-align: left;
+  width: 30%;
+
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.input-field {
+  height: 5%;
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #6b7b8e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.rightTab {
+  display: inline-block;
+  text-align: left;
+
+  width: 30%;
+  vertical-align: middle;
+}
+
+.dropdown {
+  height: 5%;
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 5%;
+  border: 1% solid #6b7b8e;
+  border-radius: 5px;
+}
+
+.rowTabForm {
+  margin: 0;
+  padding: 0;
+}
+
+.location {
+  height: 5%;
+  width: 100%;
+  padding: 5px;
+
+  margin-left: 60%;
+}
+
+input[type="checkbox" i] {
+  -webkit-appearance: checkbox;
+  box-sizing: border-box;
+}
+input[type="radio"] {
+  box-sizing: border-box;
+}
+
+#loadImg {
+  padding-right: 10%;
+}
+
+.form-button {
+  background-color: #475262;
+  border-radius: 4px;
+  color: white;
+  font-size: 1em;
+  height: 40px;
+  width: 96px;
+  margin: 10px;
+  border: 0px solid;
+}
+
+#form {
+  background-color: white;
+  margin-left: 1em;
+  border-radius: 10px;
+  width: 35%;
+  padding: 2em;
+  max-width: 900px;
+  border: 1px solid #eee;
+}
+
+button:hover {
+  animation-name: background-color;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+@keyframes background-color {
+  100% {
+    background-color: #c0d1cf;
+  }
+}
+#title {
+  color: rgb(250, 250, 250);
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 20%;
+}
+
+fieldset,
+label {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 20px;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+.rating > label:before {
+  margin: 5px;
+  font-size: 1em;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #ffd700;
+} /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  color: #ffed85;
+}
+
+i {
+  color: #475262;
+}
+
+#lastRow {
+  margin-bottom: 4%;
+  margin-top: 2%;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+input[type="file"] {
+  display: none;
 }
