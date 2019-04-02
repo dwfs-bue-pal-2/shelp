@@ -6,6 +6,7 @@ var modalShop = document.getElementById("modal-shop");
 // Get the button that opens the modal
 var list = document.getElementById("show-list");
 var form = document.getElementById("open-form");
+var profile =document.getElementById("name_label")
 
 // Get the <span> element that closes the modal
 var close = document.getElementsByClassName("close")[0];
@@ -23,6 +24,10 @@ list.onclick = () => {
 form.onclick = () => {
   modalForm.style.display = "block";
 };
+
+profile.onClick = () => {
+  modalShop.style.display ="block";
+}
 // When the user clicks on <span> (x), close the modal
 close.onclick = () => {
   modalForm.style.display = "none";
