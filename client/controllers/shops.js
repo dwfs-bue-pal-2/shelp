@@ -1,12 +1,12 @@
 $(document).ready(() => {
+    var marker;
     getShop = () => {
         $.ajax({
             method: "GET",
-
-            url: "http://localhost:3000/locales",
-            success: function(data){
-               renderList(JSON.parse(data));
-               console.log(JSON.parse(data));
+            url: "http://localhost:3000/locales/",
+            success: function (data) {
+                renderList(JSON.parse(data));
+                console.log(JSON.parse(data));
             }
         });
     }

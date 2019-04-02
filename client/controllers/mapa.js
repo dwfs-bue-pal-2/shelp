@@ -3,10 +3,19 @@ var center = {
   lng: -58.4199791
 };
 
+var map;
 function inicializarMapa() {
-  return map = new google.maps.Map(document.getElementById("map"), {
+	
+  	map = new google.maps.Map(document.getElementById("map"), {
     center: center,
     zoom: 14,
-    mapTypeControl: false
+    mapTypeControl: false,
+    mapTypeId: 'roadmap'
   });
+
+  	var input = document.getElementById('direccion');
+    var searchBox = new google.maps.places.SearchBox(input);
+    //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+       
 }
