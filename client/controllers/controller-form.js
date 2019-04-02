@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    $("form").keypress(function(e) {
+        if (e.which == 13) {
+            return false;
+        }
+    });
 
     $('#send').on('click', function(e) {
         e.preventDefault();
