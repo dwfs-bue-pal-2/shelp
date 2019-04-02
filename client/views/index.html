@@ -11,11 +11,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y"
     crossorigin="anonymous" />
     
-    <script src="../controllers/shops.js"></script>
-  <script src="../controllers/controller-form.js"></script>
-  <script src="../controllers/mapa.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&callback=inicializarMapa"
-    async defer></script>
+   
+    
     
 </head>
 
@@ -60,13 +57,15 @@
       <h1>Agregar local</h1>
 
       <form id="alta-locales-form">
+
+        
   
-        <div class="rowTabForm">
+         <div class="rowTabForm">
           <div class="labels">
             <label id="name_label">Nombre</label>
           </div>
           <div class="rightTab">
-            <input type="text" maxlength="50" name="name" id="name" class="input-field" required></input>
+            <input type="text" maxlength="50" name="name" id="name" class="input-field" required/>
           </div>
         </div>
   
@@ -81,11 +80,11 @@
         </div>
   
         <div class="rowTabForm">
-          <div class="labels">
+           <div class="labels">
             <label>Dirección</label>
-          </div>
+          </div> 
           <div class="rightTab">
-            <input type="text" name="direccion" maxlength="500" id="direccion" data-lat="0" data-lon="0" class="input-field" required></input>
+              <input type="text" name="direccion" maxlength="500" id="direccion" data-lat="0" data-lon="0" class="input-field" required/>
           </div>
         </div>
   
@@ -102,6 +101,7 @@
             <label>Telefono</label>
           </div>
           <div class="rightTab">
+
             <input type="number" maxlength="30" name="telefono" id="telefono" class="input-field" required></input>
           </div>
         </div>
@@ -154,7 +154,7 @@
           <button id="send" class="form-button" type="submit">Enviar</button>
   
   
-      </form>
+      </form> 
     </section>
   
   </modal>
@@ -207,7 +207,15 @@
       </div>
     </div>
   </modal>
+   <script src="../controllers/shops.js"></script>
+  <script src="../controllers/controller-form.js"></script>
+  <script src="../controllers/mapa.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&language=es&callback=inicializarMapa" async defer></script>
   <script src="../controllers/modals.js"></script>
+
+
+ 
+    
 </body>
 
 </html>

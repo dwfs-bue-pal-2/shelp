@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    var marker;
     getShop = () => {
         $.ajax({
             method: "GET",
