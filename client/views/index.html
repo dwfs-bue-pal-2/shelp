@@ -66,7 +66,7 @@
             <label id="name_label">Nombre</label>
           </div>
           <div class="rightTab">
-            <input type="text" name="name" id="name" class="input-field"></input>
+            <input type="text" maxlength="50" name="name" id="name" class="input-field" required></input>
           </div>
         </div>
   
@@ -75,7 +75,7 @@
             <label for="comments"> Breve descripción </label>
           </div>
           <div class="rightTab">
-            <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment"> </textarea>
+            <textarea id="comments" maxlength="700" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment"> </textarea>
           </div>
   
         </div>
@@ -85,13 +85,13 @@
             <label>Dirección</label>
           </div>
           <div class="rightTab">
-            <input type="text" name="direccion" id="direccion" class="input-field" required></input>
+            <input type="text" name="direccion" maxlength="500" id="direccion" data-lat="0" data-lon="0" class="input-field" required></input>
           </div>
         </div>
   
         <div class="rowTabForm">
           <div class="rightTab">
-            <div class="location">Mi ubicación
+            <div class="location">Utilizar mi ubicación
               <i class="fas fa-map-marker-alt"></i>
             </div>
           </div>
@@ -102,7 +102,7 @@
             <label>Telefono</label>
           </div>
           <div class="rightTab">
-            <input type="tel" name="telefono" id="telefono" class="input-field" required></input>
+            <input type="number" maxlength="30" name="telefono" id="telefono" class="input-field" required></input>
           </div>
         </div>
   
@@ -130,7 +130,7 @@
             <label>Horario</label>
           </div>
           <div class="rightTab">
-            <input type="text" name="" id="horario" class="input-field" required></input>
+            <input type="text" name="horario" maxlength="50" id="horario" class="input-field" required></input>
           </div>
         </div>
   
@@ -143,7 +143,7 @@
                 <div class="formContainer">
                   <i class="fas fa-file-upload icon"></i>
                 </div>
-                <input type="file" id="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                <input type="file" id="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif" >
               </label>
 
             </div>
