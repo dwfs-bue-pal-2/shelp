@@ -24,7 +24,7 @@ html {
   font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
     Sans-Serif;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -70,7 +70,7 @@ div {
   background-color: white;
   height: 100vh;
   padding-top: 1em;
-  padding-right: 1em;
+  padding-right: 3em;
 }
 
 #scroll {
@@ -237,7 +237,7 @@ div.close {
   max-width: 900px;
   border-radius: 10px;
   border: 1px solid #d3d3d3;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .search_input_wrapper,
@@ -254,8 +254,6 @@ div.close {
 }
 
 .search-box {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
   vertical-align: middle;
 }
 
