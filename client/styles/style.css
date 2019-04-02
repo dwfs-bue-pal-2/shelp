@@ -171,12 +171,20 @@ a {
 
 /* The Close Button */
 .close,
-.closeList {
+.closeList, .closeShop {
   position: sticky;
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+.back {
+  position: sticky;
+  color: #aaaaaa;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 div.close {
