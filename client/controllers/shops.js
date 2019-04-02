@@ -1,12 +1,31 @@
+const serverUrl = "http://localhost:3000/";
 $(document).ready(() => {
   var marker;
-  getShop = () => {
+  getShops = () => {
     $.ajax({
       method: "GET",
-      url: "http://localhost:3000/locales/",
+      url: serverUrl + "locales/",
       success: function(data) {
         renderList(JSON.parse(data));
-        console.log(JSON.parse(data));
+      }
+    });
+  };
+  getReviews = (shopData, id) => {
+    $.ajax({
+      method: "GET",
+      url: serverUrl + "reviews/shop/" + id,
+      success: function(reviews) {
+        console.log(reviews);
+        createShopModal(JSON.parse(shopData, reviews));
+      }
+    });
+  };
+  getShop = id => {
+    $.ajax({
+      method: "GET",
+      url: serverUrl + "locales/" + id,
+      success: function(data) {
+        getReviews(data,id);
       }
     });
   };
@@ -21,6 +40,7 @@ $(document).ready(() => {
       markShops(shop);
     });
   };
+
   addShopToList = data => {
     let $modal = $("#modal-row").clone(true);
     $modal.css("display", "block");
@@ -35,15 +55,14 @@ $(document).ready(() => {
     $("#shops .container").append($modal);
     $("#" + data.id).on("click", function() {
       modal.style.display = "none";
-      createShopModal(data);
-      console.log("Abrir detalles shop ID ", data.id);
+      getShop(data.id);
     });
   };
-  function createShopModal(data) {
-    console.log(data)
-    let $modalShop = $("#modal-shop").clone(true);
+  function createShopModal(data,reviews) {
+    let $modalShop = $("#modal-shop");
+    //CARGA INFO AL MODAL
     $modalShop.find(".shop-name").text(data.name);
-    $modalShop.find(".shop-name").attr("id", data.id);
+    //$modalShop.find(".shop-name").attr("id", data.id);
     $modalShop.find(".phone").text(data.phone);
     $modalShop.find(".address").text(data.address);
     modalShop.style.display = "block";
@@ -107,5 +126,5 @@ $(document).ready(() => {
     });
   };
 
-  getShop();
+  getShops();
 });

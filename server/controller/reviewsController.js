@@ -5,7 +5,7 @@ var srv = new service();
 function Controller() {
   this.getByShop = (req, res) => {
     var id = req.params.id;
-
+    console.log(req.params)
     if (!id) {
       res.status(404).send("Local no encontrado");
       return;
