@@ -15,8 +15,7 @@ $(document).ready(() => {
       method: "GET",
       url: serverUrl + "reviews/shop/" + id,
       success: function(reviews) {
-        console.log(reviews);
-        createShopModal(JSON.parse(shopData, reviews));
+        createShopModal(JSON.parse(shopData), reviews);
       }
     });
   };
@@ -25,7 +24,7 @@ $(document).ready(() => {
       method: "GET",
       url: serverUrl + "locales/" + id,
       success: function(data) {
-        getReviews(data,id);
+        getReviews(data, id);
       }
     });
   };
@@ -58,13 +57,20 @@ $(document).ready(() => {
       getShop(data.id);
     });
   };
-  function createShopModal(data,reviews) {
+  function createShopModal(data, reviews) {
     let $modalShop = $("#modal-shop");
     //CARGA INFO AL MODAL
     $modalShop.find(".shop-name").text(data.name);
     //$modalShop.find(".shop-name").attr("id", data.id);
     $modalShop.find(".phone").text(data.phone);
     $modalShop.find(".address").text(data.address);
+    $modalShop.find(".description").text(data.description);
+    for (let elem of reviews) {
+      //div de reviews .clone
+      //llenar datos
+      //append
+      console.log(elem.user, elem.score, elem.comment, elem.date);
+    }
     modalShop.style.display = "block";
   }
   getScore = ($modal, rating) => {
