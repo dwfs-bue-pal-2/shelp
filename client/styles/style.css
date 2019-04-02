@@ -73,7 +73,7 @@ div {
   padding-right: 3em;
 }
 
-#scroll {
+.scroll {
   height: 550px;
   border: 1px solid #ddd;
   width: 30%;
@@ -107,7 +107,6 @@ div {
 }
 
 .left {
-  width: 100%;
   float: left;
   margin-top: 1em;
 
@@ -163,7 +162,6 @@ div {
 .imgs {
   font-size: 2.5em;
   display: inline-flex;
-
   float: left;
 }
 
@@ -524,5 +522,33 @@ input[type="file"] {
 }
 */
 
-#direccion {
+/* #direccion {
+} */
+
+.shop-info {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  display: block;
+}
+
+#details {
+  position: relative;
+  z-index: 1;
+  margin-left: 1%;
+}
+
+.back {
+  margin-left: 1em;
 }
