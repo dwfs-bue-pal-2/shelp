@@ -34,6 +34,7 @@ $(document).ready(() => {
   });
 
   renderList = data => {
+    console.log(data)
     data.forEach(shop => {
       addShopToList(shop);
       markShops(shop);
