@@ -1,5 +1,6 @@
 const serverUrl = "http://localhost:3000/";
 $(document).ready(() => {
+  var infowindow = null;
   var marker;
   getShops = () => {
     $.ajax({
@@ -34,7 +35,6 @@ $(document).ready(() => {
   });
 
   renderList = data => {
-    console.log(data);
     data.forEach(shop => {
       addShopToList(shop);
       markShops(shop);
@@ -99,39 +99,25 @@ $(document).ready(() => {
       map: map
     });
 
-    marker.addListener("click", function popup() {
-      let $modal = $("#modal-row").clone(true);
+    google.maps.event.addListener(marker, "click", function() {
+      let $modal = $("#modal-row-infoWindow").clone(true);
       $modal.removeAttr("id");
       $modal.find(".shop-name").text(data.name);
       $modal.find(".phone").text(data.phone);
       $modal.find(".address").text(data.address);
 
       let modal = $modal.html();
-
       let string = modal.toString();
 
-      let infowindow = new google.maps.InfoWindow({
+      if (infowindow) {
+        infowindow.close();
+      }
+      infowindow = new google.maps.InfoWindow({
         content: string
       });
-
+      map.panTo(marker.position);
       infowindow.open(map, marker);
-    });
-    marker.addListener("click", function() {
-      let $modal = $("#modal-row").clone(true);
-      $modal.removeAttr("id");
-      $modal.find(".shop-name").text(data.name);
-      $modal.find(".phone").text(data.phone);
-      $modal.find(".address").text(data.address);
-
-      let modal = $modal.html();
-
-      let string = modal.toString();
-
-      let infowindow = new google.maps.InfoWindow({
-        content: string
-      });
-
-      infowindow.open(map, marker);
+      infowindow.setPosition({ lat: data.lat, lng: data.lon });
     });
   };
 
