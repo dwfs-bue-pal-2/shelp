@@ -1,4 +1,8 @@
+   var resultado = '';
+
 $(document).ready(function() {
+
+ 
 
     $("form").keypress(function(e) {
         if (e.which == 13) {
@@ -8,7 +12,9 @@ $(document).ready(function() {
 
     $('#send').on('click', function(e) {
         e.preventDefault();
+        
 
+       
         var name = $("#name").val();
         var description = $("#comments").val();
         var address = $("#direccion").val();
@@ -19,8 +25,14 @@ $(document).ready(function() {
         var hours = $("#horario").val();
         var img = $("#file").val();
 
+        
+        console.log("obtener lat y long " + getLatLong(address));
+    
+      
 
-        if (name && description && address && type && phone && hours) {
+/*
+
+        if (name && description && address && type && phone && hours && lat ) {
 
             $.post("http://localhost:3000/locales", {
                     name: name,
@@ -44,6 +56,7 @@ $(document).ready(function() {
         } else {
             alert('Debe completar todos los campos');
         }
+*/
     });
 
     $('#cancel').on('click', function(e) {
@@ -56,3 +69,6 @@ $(document).ready(function() {
         $("#alta-locales-form").find("input, textarea").val("");
     };
 });
+
+
+
