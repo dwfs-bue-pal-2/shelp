@@ -49,7 +49,7 @@ $(document).ready(function() {
     $('#cancel').on('click', function(e) {
         e.preventDefault();
         clearForm();
-        console.log(rating);
+        $("#modal-form")[0].style.display = "none";
     });
 
     function clearForm() {

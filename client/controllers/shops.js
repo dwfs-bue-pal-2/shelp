@@ -1,5 +1,6 @@
 const serverUrl = "http://localhost:3000/";
 $(document).ready(() => {
+  var infowindow = null;
   var marker;
   getShops = () => {
     $.ajax({
@@ -34,7 +35,6 @@ $(document).ready(() => {
   });
 
   renderList = data => {
-    console.log(data)
     data.forEach(shop => {
       addShopToList(shop);
       markShops(shop);
@@ -61,15 +61,18 @@ $(document).ready(() => {
   function createShopModal(data, reviews) {
     let $modalShop = $("#modal-shop");
     //CARGA INFO AL MODAL
-    $modalShop.find(".shop-name").text(data.name);
+    $modalShop.find(".p-shop-name").text(data.name);
     //$modalShop.find(".shop-name").attr("id", data.id);
-    $modalShop.find(".phone").text(data.phone);
-    $modalShop.find(".address").text(data.address);
-    $modalShop.find(".description").text(data.description);
+    $modalShop.find(".p-phone").text(data.phone);
+    $modalShop.find(".p-address").text(data.address);
+    $modalShop.find(".p-description").text(data.description);
+    $(".reviews").html("");
     for (let elem of reviews) {
-      //div de reviews .clone
-      //llenar datos
-      //append
+      let $review = $modalShop.find("#review-container").clone(true);
+      $review.find(".review-comment").text(elem.comment);
+      $review.find(".review-author").text("Author: " + elem.user);
+      $review.css("display","block");
+      $(".reviews").append($review);
       console.log(elem.user, elem.score, elem.comment, elem.date);
     }
     modalShop.style.display = "block";
@@ -92,44 +95,31 @@ $(document).ready(() => {
 
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(latLong),
-      label: data.name,
+      title: data.name,
       id: data.id,
-      map: map
+      map: map,
+      animation: "drop"
     });
 
-    marker.addListener("click", function popup() {
-      let $modal = $("#modal-row").clone(true);
+    google.maps.event.addListener(marker, "click", function() {
+      let $modal = $("#modal-row-infoWindow").clone(true);
       $modal.removeAttr("id");
       $modal.find(".shop-name").text(data.name);
       $modal.find(".phone").text(data.phone);
       $modal.find(".address").text(data.address);
 
       let modal = $modal.html();
-
       let string = modal.toString();
 
-      let infowindow = new google.maps.InfoWindow({
+      if (infowindow) {
+        infowindow.close();
+      }
+      infowindow = new google.maps.InfoWindow({
         content: string
       });
-
+      map.panTo({ lat: data.lat+0.0065, lng: data.lon });
       infowindow.open(map, marker);
-    });
-    marker.addListener("click", function() {
-      let $modal = $("#modal-row").clone(true);
-      $modal.removeAttr("id");
-      $modal.find(".shop-name").text(data.name);
-      $modal.find(".phone").text(data.phone);
-      $modal.find(".address").text(data.address);
-
-      let modal = $modal.html();
-
-      let string = modal.toString();
-
-      let infowindow = new google.maps.InfoWindow({
-        content: string
-      });
-
-      infowindow.open(map, marker);
+      infowindow.setPosition({ lat: data.lat, lng: data.lon });
     });
   };
 

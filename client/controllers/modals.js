@@ -18,10 +18,14 @@ var back  = document.getElementsByClassName("back")[0];
 
 // When the user clicks the button, open the modal
 list.onclick = () => {
+  modalForm.style.display = "none";
+  modalShop.style.display ="none";
   modal.style.display = "block";
 };
 
 form.onclick = () => {
+  modal.style.display = "none";
+  modalShop.style.display ="none";
   modalForm.style.display = "block";
 };
 
@@ -40,6 +44,7 @@ closeList.onclick = () => {
 closeShop.onclick = () => {
   modalShop.style.display = "none";
 };
+
 // When the user clicks on Back, go back to List modal
 back.onclick = () => {
   modalShop.style.display = "none";

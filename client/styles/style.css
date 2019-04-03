@@ -48,35 +48,35 @@ div {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  margin-top: 70px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 350px; /* Full width */
+  height: 600px; /* Full height */
+  /* overflow: auto; Enable scroll if needed */
 }
 
-#shops {
+#shops,#form,#details {
   position: relative;
   z-index: 1;
   margin-left: 1%;
 }
 
 .container {
-  width: 30%;
+  width: 100%;
   margin-top: 2%;
+  margin-left: 1em;
   border: 1px solid grey;
   border-radius: 10px;
   background-color: white;
   height: 100vh;
-  padding-top: 1em;
-  padding-right: 3em;
+  padding-top: .3em;
+  padding-right: 1em;
 }
 
 .scroll {
-  height: 550px;
+  height: 600px;
   border: 1px solid #ddd;
-  width: 30%;
   overflow: auto;
 }
 
@@ -231,9 +231,9 @@ div.close {
   position: relative;
   z-index: 1;
   background-color: white;
-  margin-left: 4%;
+  margin-left: 0;
   width: 70%;
-  max-width: 900px;
+  max-width: 700px;
   border-radius: 10px;
   border: 1px solid #d3d3d3;
   margin-top: 0.5em;
@@ -249,9 +249,13 @@ div.close {
   font-size: 1em;
 }
 .location {
-  margin: 2em;
+  margin: 0.6em 2em;
 }
 
+.view-list1,
+.view-form {
+  margin-bottom: 0.35em;
+}
 .search-box {
   vertical-align: middle;
 }
@@ -283,7 +287,12 @@ div.close {
 }
 
 /****** Form *****/
-
+.align-right {
+  text-align: right;
+}
+.location-form {
+  text-align: right;
+}
 .labels {
   display: inline-block;
   text-align: left;
@@ -358,17 +367,6 @@ input[type="radio"] {
   width: 96px;
   margin: 10px;
   border: 0px solid;
-}
-
-#form {
-  background-color: white;
-  margin-left: 1em;
-  border-radius: 10px;
-  width: 35%;
-  max-width: 900px;
-  border: 1px solid #eee;
-  margin-top: 2%;
-  padding: 1em;
 }
 
 button:hover {
@@ -449,6 +447,7 @@ body {
 
 i {
   color: #475262;
+  float: left;
 }
 
 #lastRow {
@@ -548,7 +547,12 @@ input[type="file"] {
   z-index: 1;
   margin-left: 1%;
 }
-
+.addReview {
+  padding: 1em;
+}
 .back {
   margin-left: 1em;
+}
+#review-container {
+  display:none;
 }

@@ -53,6 +53,7 @@
   <modal id="modal-form" class="modal">
   
     <section id="form">
+        <div class="scroll container">
       <div class="close">&times;</div>
       <h1>Agregar local</h1>
 
@@ -88,9 +89,9 @@
           </div>
         </div>
   
-        <div class="rowTabForm">
+        <div id="align-right" class="rowTabForm">
           <div class="rightTab">
-            <div class="location">Utilizar mi ubicación
+            <div class="location-form">Utilizar mi ubicación
               <i class="fas fa-map-marker-alt"></i>
             </div>
           </div>
@@ -101,8 +102,7 @@
             <label>Telefono</label>
           </div>
           <div class="rightTab">
-
-            <input type="number" maxlength="30" name="telefono" id="telefono" class="input-field" required></input>
+            <input type="" maxlength="10" name="telefono" id="telefono" class="input-field" required></input>
           </div>
         </div>
   
@@ -154,7 +154,8 @@
           <button id="send" class="form-button" type="submit">Enviar</button>
   
   
-      </form> 
+      </form>  
+    </div>
     </section>
   
   </modal>
@@ -171,6 +172,7 @@
 
       <div class="scroll container">
         <div class="closeList">&times;</div>
+        <h1>Restaurantes</h1>
 
         <div id="modal-row" class="row">
           <div class="box">
@@ -208,6 +210,40 @@
       </div>
     </div>
   </modal>
+  <!-- Shop-infowindow-Modal-->
+  <div id="modal-row-infoWindow" class="row">
+      <div class="box">
+        <div class="rowTab">
+          
+          <div class="left">
+            <div class="imgs">
+              <div class="row">
+                <i class="far fa-image"></i>
+                <i class="far fa-image"></i>
+              </div>
+              <div class="row">
+                <i class="far fa-image"></i>
+                <i class="far fa-image"></i>
+              </div>
+            </div>
+            <div class="stars"></div>
+          </div>
+          <div class="center">
+            <h1 class="shop-name"></h1>
+            <p class="phone"></p>
+            <p class="address"></p>
+            <a class="link-web" href="www.parrilladonjulio.com">www.sitioweb.com</a>
+          </div>
+          <div class="right">
+            <ul class="logos">
+              <i class="fab fa-instagram social"></i>
+              <i class="fab fa-facebook social"></i>
+              <i class="far fa-envelope"></i>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
  
  
   <!-- Shop-Detail-Modal-->
@@ -217,13 +253,12 @@
 
       <div class="scroll container">
         <div class="closeShop">&times;</div>
-        <button class="back home-btn">Back to list</button>
+        <button class="back home-btn">Volver a la lista</button>
     
   
       <div class="row">
        <div class="shop-info"><div class="box">
         <div class="rowTab">
-          
                     <div class="left">
                         <div class="imgs">
                             <div class="row">
@@ -237,10 +272,10 @@
                           </div>
                     </div>
                     <div class="center">
-                    <h1>Parrilla Don Julio</h1>
-                    <p>011 4832-6058</p>
-                    <p>Guatemala 4699, C1425 CABA</p>
-                    <a href="www.parrilladonjulio.com">www.parrilladonjulio.com</a>
+                    <h1 class="p-shop-name"></h1>
+                    <p class="p-phone"></p>
+                    <p class="p-addres"></p>
+                    <a class="p-web" href="www.parrilladonjulio.com"></a>
                    </div>
                    <div class="right">
                       <ul class="logos">
@@ -252,48 +287,38 @@
                     </div>
                    </div>
                 </div>
-             </div>
-
-
-             <div class="row">
+               </div>
+           <div class="row">
               <div class="rowTab">
                 <div class="description">
-                   <h1>Descripción</h1>            
-                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe iure molestias ducimus, quasi aut neque ipsa quam! Itaque optio excepturi at ab ullam accusamus doloribus quos quis dolores fugit? Exercitationem!</p>
-                  </div>
-                  
+                   <h1 >Descripción</h1>            
+                   <p class="p-description"></p>
+                  </div>           
                 </div>
                 </div>
-              
-
               <div class="row">
+                <h1>Reviews</h1>
+              </div>
+                  <div class="row">
                   <div class="reviews">
-                   <div class="rowTab">
-                      <div class="title">
-                          <h1>Reviews</h1>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit cumque voluptatibus dolore, commodi libero mollitia explicabo alias ex laboriosam consequatur voluptatum tempore voluptate assumenda ut quasi eum. Voluptatibus, quis.</p>
-                          <div class="addReview">
-                            <button class="home-btn">Add review</button>
-                           </div>
-                          </div>
-                        
-  
                    
-                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="addReview">
+                      <button class="home-btn">Add review</button>
+                      </div>
                   </div>
                 </div>
-<<<<<<< HEAD
-              </div>
-=======
-
-
-  
-
-
-
->>>>>>> 19e6817536d6517228332c93d936fe0a81f5e518
-          </div>
         </div>
+
+        <div id="review-container" class="rowTab">
+            <div class="title">
+                <!-- <div class="stars"></div> -->
+                <p class="review-comment"></p>
+                <p class="review-author"></p>
+              </div>
+            </div>
+          </div>
         
       
         
