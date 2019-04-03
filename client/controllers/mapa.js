@@ -32,9 +32,7 @@ function getLatLong(direccion){
 				var resultados = results[0].geometry.location,
 					resultados_lat = resultados.lat(),
 					resultados_long = resultados.lng();
-				
-				console.log('resultado lat ' + resultados);
-				return resultados;
+				saveShop(resultados_lat, resultados_long);
 			} else {
 				var mensajeError = "Error get latitude and longitude";
 				

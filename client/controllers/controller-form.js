@@ -1,8 +1,6 @@
-   var resultado = '';
+   var name, description, address, lat, lon, phone, type, hours, img;
 
 $(document).ready(function() {
-
- 
 
     $("form").keypress(function(e) {
         if (e.which == 13) {
@@ -11,26 +9,34 @@ $(document).ready(function() {
     });
 
     $('#send').on('click', function(e) {
+        e.preventDefault();    
+        getLatLong($("#direccion").val());
+    });
+
+    $('#cancel').on('click', function(e) {
         e.preventDefault();
-        
+        clearForm();
+        $("#modal-form")[0].style.display = "none";
+    });
 
-       
-        var name = $("#name").val();
-        var description = $("#comments").val();
-        var address = $("#direccion").val();
-        var lat = $("#direccion").data('lat');
-        var lon = $("#direccion").data('lon');
-        var phone = $("#telefono").val();
-        var type = $("#dropdown").val();
-        var hours = $("#horario").val();
-        var img = $("#file").val();
-
-        
-        console.log("obtener lat y long " + getLatLong(address));
     
-      
+});
 
-/*
+function clearForm() {
+    $("#alta-locales-form").find("input, textarea").val("");
+};
+
+
+function saveShop(latitud, longitud){
+     name = $("#name").val();
+        description = $("#comments").val();
+        address = $("#direccion").val();
+        lat = latitud;
+        lon = longitud;
+        phone = $("#telefono").val();
+        type = $("#dropdown").val();
+        hours = $("#horario").val();
+        img = $("#file").val();
 
         if (name && description && address && type && phone && hours && lat ) {
 
@@ -56,19 +62,5 @@ $(document).ready(function() {
         } else {
             alert('Debe completar todos los campos');
         }
-*/
-    });
 
-    $('#cancel').on('click', function(e) {
-        e.preventDefault();
-        clearForm();
-        $("#modal-form")[0].style.display = "none";
-    });
-
-    function clearForm() {
-        $("#alta-locales-form").find("input, textarea").val("");
-    };
-});
-
-
-
+};
