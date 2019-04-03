@@ -34,7 +34,7 @@ $(document).ready(() => {
   });
 
   renderList = data => {
-    console.log(data)
+    console.log(data);
     data.forEach(shop => {
       addShopToList(shop);
       markShops(shop);
@@ -61,15 +61,17 @@ $(document).ready(() => {
   function createShopModal(data, reviews) {
     let $modalShop = $("#modal-shop");
     //CARGA INFO AL MODAL
-    $modalShop.find(".shop-name").text(data.name);
+    $modalShop.find(".p-shop-name").text(data.name);
     //$modalShop.find(".shop-name").attr("id", data.id);
-    $modalShop.find(".phone").text(data.phone);
-    $modalShop.find(".address").text(data.address);
-    $modalShop.find(".description").text(data.description);
+    $modalShop.find(".p-phone").text(data.phone);
+    $modalShop.find(".p-address").text(data.address);
+    $modalShop.find(".p-description").text(data.description);
+    $(".reviews").html("");
     for (let elem of reviews) {
-      //div de reviews .clone
-      //llenar datos
-      //append
+      let $review = $modalShop.find("#review-container").clone(true);
+      $review.find(".review-comment").text(elem.comment);
+      $review.find(".review-author").text("Author: " + elem.user);
+      $(".reviews").append($review);
       console.log(elem.user, elem.score, elem.comment, elem.date);
     }
     modalShop.style.display = "block";
