@@ -48,11 +48,11 @@ div {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  margin-top: 70px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  height: 600px; /* Full height */
   overflow: auto; /* Enable scroll if needed */
 }
 
@@ -74,9 +74,9 @@ div {
 }
 
 .scroll {
-  height: 550px;
+  height: 600px;
   border: 1px solid #ddd;
-  width: 30%;
+  /* width: 30%; */
   overflow: auto;
 }
 
@@ -231,9 +231,9 @@ div.close {
   position: relative;
   z-index: 1;
   background-color: white;
-  margin-left: 4%;
+  margin-left: 0;
   width: 70%;
-  max-width: 900px;
+  max-width: 700px;
   border-radius: 10px;
   border: 1px solid #d3d3d3;
   margin-top: 0.5em;
@@ -249,7 +249,7 @@ div.close {
   font-size: 1em;
 }
 .location {
-  margin: 2em;
+  margin: 0.5em 2em;
 }
 
 .search-box {
@@ -364,11 +364,13 @@ input[type="radio"] {
   background-color: white;
   margin-left: 1em;
   border-radius: 10px;
-  width: 35%;
+  width: 30%;
   max-width: 900px;
   border: 1px solid #eee;
   margin-top: 2%;
-  padding: 1em;
+  padding: 0em 1em;
+  height: 600px;
+  max-height: 600px;
 }
 
 button:hover {
@@ -548,6 +550,7 @@ input[type="file"] {
   z-index: 1;
   margin-left: 1%;
 }
+
 
 .back {
   margin-left: 1em;
