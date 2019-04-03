@@ -71,6 +71,7 @@ $(document).ready(() => {
       let $review = $modalShop.find("#review-container").clone(true);
       $review.find(".review-comment").text(elem.comment);
       $review.find(".review-author").text("Author: " + elem.user);
+      $review.css("display","block");
       $(".reviews").append($review);
       console.log(elem.user, elem.score, elem.comment, elem.date);
     }
@@ -94,9 +95,10 @@ $(document).ready(() => {
 
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(latLong),
-      label: data.name,
+      title: data.name,
       id: data.id,
-      map: map
+      map: map,
+      animation: "drop"
     });
 
     google.maps.event.addListener(marker, "click", function() {
@@ -115,7 +117,7 @@ $(document).ready(() => {
       infowindow = new google.maps.InfoWindow({
         content: string
       });
-      map.panTo(marker.position);
+      map.panTo({ lat: data.lat+0.0065, lng: data.lon });
       infowindow.open(map, marker);
       infowindow.setPosition({ lat: data.lat, lng: data.lon });
     });

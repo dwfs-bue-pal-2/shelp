@@ -53,6 +53,7 @@
   <modal id="modal-form" class="modal">
   
     <section id="form">
+        <div class="scroll container">
       <div class="close">&times;</div>
       <h1>Agregar local</h1>
 
@@ -88,9 +89,9 @@
           </div>
         </div>
   
-        <div class="rowTabForm">
+        <div id="align-right" class="rowTabForm">
           <div class="rightTab">
-            <div class="location">Utilizar mi ubicación
+            <div class="location-form">Utilizar mi ubicación
               <i class="fas fa-map-marker-alt"></i>
             </div>
           </div>
@@ -101,8 +102,7 @@
             <label>Telefono</label>
           </div>
           <div class="rightTab">
-
-            <input type="number" maxlength="30" name="telefono" id="telefono" class="input-field" required></input>
+            <input type="" maxlength="10" name="telefono" id="telefono" class="input-field" required></input>
           </div>
         </div>
   
@@ -154,7 +154,8 @@
           <button id="send" class="form-button" type="submit">Enviar</button>
   
   
-      </form> 
+      </form>  
+    </div>
     </section>
   
   </modal>
@@ -171,6 +172,7 @@
 
       <div class="scroll container">
         <div class="closeList">&times;</div>
+        <h1>Restaurantes</h1>
 
         <div id="modal-row" class="row">
           <div class="box">
@@ -208,7 +210,7 @@
       </div>
     </div>
   </modal>
-  <!-- Shop-List-Modal-->
+  <!-- Shop-infowindow-Modal-->
   <div id="modal-row-infoWindow" class="row">
       <div class="box">
         <div class="rowTab">
@@ -251,7 +253,7 @@
 
       <div class="scroll container">
         <div class="closeShop">&times;</div>
-        <button class="back home-btn">Back to list</button>
+        <button class="back home-btn">Volver a la lista</button>
     
   
       <div class="row">

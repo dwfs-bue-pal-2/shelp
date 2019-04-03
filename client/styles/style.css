@@ -51,32 +51,32 @@ div {
   margin-top: 70px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
+  width: 350px; /* Full width */
   height: 600px; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  /* overflow: auto; Enable scroll if needed */
 }
 
-#shops {
+#shops,#form,#details {
   position: relative;
   z-index: 1;
   margin-left: 1%;
 }
 
 .container {
-  width: 30%;
+  width: 100%;
   margin-top: 2%;
+  margin-left: 1em;
   border: 1px solid grey;
   border-radius: 10px;
   background-color: white;
   height: 100vh;
-  padding-top: 1em;
-  padding-right: 3em;
+  padding-top: .3em;
+  padding-right: 1em;
 }
 
 .scroll {
   height: 600px;
   border: 1px solid #ddd;
-  /* width: 30%; */
   overflow: auto;
 }
 
@@ -249,9 +249,13 @@ div.close {
   font-size: 1em;
 }
 .location {
-  margin: 0.5em 2em;
+  margin: 0.6em 2em;
 }
 
+.view-list1,
+.view-form {
+  margin-bottom: 0.35em;
+}
 .search-box {
   vertical-align: middle;
 }
@@ -283,7 +287,12 @@ div.close {
 }
 
 /****** Form *****/
-
+.align-right {
+  text-align: right;
+}
+.location-form {
+  text-align: right;
+}
 .labels {
   display: inline-block;
   text-align: left;
@@ -358,19 +367,6 @@ input[type="radio"] {
   width: 96px;
   margin: 10px;
   border: 0px solid;
-}
-
-#form {
-  background-color: white;
-  margin-left: 1em;
-  border-radius: 10px;
-  width: 30%;
-  max-width: 900px;
-  border: 1px solid #eee;
-  margin-top: 2%;
-  padding: 0em 1em;
-  height: 600px;
-  max-height: 600px;
 }
 
 button:hover {
@@ -451,6 +447,7 @@ body {
 
 i {
   color: #475262;
+  float: left;
 }
 
 #lastRow {
@@ -550,8 +547,12 @@ input[type="file"] {
   z-index: 1;
   margin-left: 1%;
 }
-
-
+.addReview {
+  padding: 1em;
+}
 .back {
   margin-left: 1em;
+}
+#review-container {
+  display:none;
 }
