@@ -35,7 +35,8 @@
 }
 
 .modal {
-  width:350px;}
+  width: 350px;
+}
 
 #map {
   height: 100%;
@@ -61,4 +62,12 @@
 
 #modal-list {
   width: 40% !important;
+}
+
+.modal {
+  width: 200px;
+}
+
+a {
+  text-decoration: none;
 }
