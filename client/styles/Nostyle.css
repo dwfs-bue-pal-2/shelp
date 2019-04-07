@@ -56,13 +56,15 @@ div {
   /* overflow: auto; Enable scroll if needed */
 }
 
-#shops,#form,#details {
+#shops,
+#form,
+#details {
   position: relative;
   z-index: 1;
   margin-left: 1%;
 }
 
-.container {
+/* .container {
   width: 100%;
   margin-top: 2%;
   margin-left: 1em;
@@ -72,7 +74,7 @@ div {
   height: 100vh;
   padding-top: .3em;
   padding-right: 1em;
-}
+} */
 
 .scroll {
   height: 600px;
@@ -554,5 +556,5 @@ input[type="file"] {
   margin-left: 1em;
 }
 #review-container {
-  display:none;
+  display: none;
 }

@@ -1,4 +1,4 @@
-   var name, description, address, lat, lon, phone, type, hours, img;
+var name, description, address, lat, lon, phone, type, hours, img;
 
 $(document).ready(function() {
 
@@ -9,7 +9,7 @@ $(document).ready(function() {
     });
 
     $('#send').on('click', function(e) {
-        e.preventDefault();    
+        e.preventDefault();
         getLatLong($("#direccion").val());
     });
 
@@ -19,13 +19,11 @@ $(document).ready(function() {
         $("#modal-form")[0].style.display = "none";
     });
 
-    
 });
 
 function clearForm() {
     $("#alta-locales-form").find("input, textarea").val("");
 };
-
 
 function saveShop(latitud, longitud){
      name = $("#name").val();
