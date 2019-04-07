@@ -9,14 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link type="text/css" href="../styles/modalStyle.css" rel="stylesheet" />
     <link type="text/css" href="../styles/bootstrap.min.css" rel="stylesheet" />
-  
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous" />
 
 </head>
 
 <body>
-  
 
     <div id="map"></div>
 
@@ -55,181 +53,181 @@
     <!-- Modal form-->
     <div class="modal left fade mt-5" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog mt-5 ml-4 mb-5" role="document">
+            <section id="form">
+                <div class="modal-content col-sm-10">
+                    <div class="modal-header">
+                        <div class="col-sm-6 ml-3">
+                            <h5 class="modal-title"> Agregar Local</h5></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
 
-            <div class="modal-content col-sm-10">
-                <div class="modal-header">
-                    <div class="col-sm-6 ml-3">
-                        <h5 class="modal-title"> Agregar Local</h5></div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="alta-locales-form">
+                            <div class="container mb-3 mt-3">
 
-                </div>
-                <div class="modal-body">
-                    <form id="alta-locales-form">
-                        <div class="container mb-3 mt-3">
+                                <div class="form-group row">
+                                    <label for="name" id="name_label" class="col-sm-3 col-form-label ml-3">Nombre</label>
 
-                            <div class="form-group row">
-                                <label for="name" id="name_label" class="col-sm-3 col-form-label ml-3">Nombre</label>
-
-                                <div class="col-sm-8 ml-2">
-                                    <input type="text" class="form-control" maxlength="50" id="name" />
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-
-                                <label for="comments" class="col-sm-3 col-form-label ml-3"> Breve descripción </label>
-
-                                <div class="col-sm-8  ml-2">
-                                    <textarea id="comments" maxlength="700" class="form-control" name="comment"> </textarea>
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="text" class="form-control" maxlength="50" id="name" />
+                                    </div>
                                 </div>
 
-                            </div>
+                                <div class="form-group row">
 
-                            <div class="form-group row">
+                                    <label for="comments" class="col-sm-3 col-form-label ml-3"> Breve descripción </label>
 
-                                <label for="address" class="col-sm-3 col-form-label ml-3">Dirección</label>
+                                    <div class="col-sm-8  ml-2">
+                                        <textarea id="comments" maxlength="700" class="form-control" name="comment"> </textarea>
+                                    </div>
 
-                                <div class="col-sm-8  ml-2">
-
-                                    <input type="text" class="form-control" name="address" id="direccion" data-lat="0" data-lon="0" maxlength="50" />
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-3 col-form-label ml-3"></div>
-
-                                <div class="col-sm-8 ml-2">Utilizar mi ubicación
-                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
 
-                            </div>
+                                <div class="form-group row">
 
-                            <div class="form-group row">
-                                <label for="phone" class="col-sm-3 col-form-label ml-3">Telefono</label>
-                                <div class="col-sm-8 ml-2">
-                                    <input type="" maxlength="10" name="telefono" id="telefono" class="form-control" required></input>
+                                    <label for="address" class="col-sm-3 col-form-label ml-3">Dirección</label>
+
+                                    <div class="col-sm-8  ml-2">
+
+                                        <input type="text" class="form-control" name="address" id="direccion" data-lat="0" data-lon="0" maxlength="50" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="type" class="col-sm-3 col-form-label ml-3">Cocina</label>
-                                <div class="col-sm-8 ml-2">
-                                    <select id="dropdown" name="currentPos" class="dropdown form-control">
-                                        <option disabled value>Select an option</option>
+                                <div class="form-group row">
+                                    <div class="col-sm-3 col-form-label ml-3"></div>
 
-                                        <option value="comida-rapida">Comida rápida</option>
-                                        <option value="vegetariana">Vegetariana</option>
-                                        <option value="cocina-de-autor">Cocina de autor</option>
-                                        <option value="asiatica">Asiática</option>
-                                        <option value="otros">Otros</option>
+                                    <div class="col-sm-8 ml-2">Utilizar mi ubicación
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
 
-                                    </select>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="horario" class="col-sm-3 col-form-label ml-3">Horario</label>
-                                <div class="col-sm-8 ml-2">
-                                    <input type="text" name="horario" maxlength="50" id="horario" class="form-control"></input>
+                                <div class="form-group row">
+                                    <label for="phone" class="col-sm-3 col-form-label ml-3">Telefono</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="" maxlength="10" name="telefono" id="telefono" class="form-control" required></input>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="load" class="col-sm-3 col-form-label ml-3">Cargar imagen</label>
-                                <div class="col-sm-8 ml-2">
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <div class="form-group row">
+                                    <label for="type" class="col-sm-3 col-form-label ml-3">Cocina</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <select id="dropdown" name="currentPos" class="dropdown form-control">
+                                            <option disabled value>Select an option</option>
+
+                                            <option value="comida-rapida">Comida rápida</option>
+                                            <option value="vegetariana">Vegetariana</option>
+                                            <option value="cocina-de-autor">Cocina de autor</option>
+                                            <option value="asiatica">Asiática</option>
+                                            <option value="otros">Otros</option>
+
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="float-right">
-                                <input class="btn btn-primary ml-3" id="cancel" type="reset" value="Cancelar">
+                                <div class="form-group row">
+                                    <label for="horario" class="col-sm-3 col-form-label ml-3">Horario</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="text" name="horario" maxlength="50" id="horario" class="form-control"></input>
+                                    </div>
+                                </div>
 
-                                <input class="btn btn-primary ml-3" id="send" type="submit" value="Enviar">
-                            </div>
+                                <div class="form-group row">
+                                    <label for="load" class="col-sm-3 col-form-label ml-3">Cargar imagen</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                                </div>
 
-                    </form>
+                                <div class="float-right">
+
+                                    <button id="cancel" class="form-button" type="cancel">Cancelar</button>
+
+                                    <button id="send" class="form-button" type="submit">Enviar</button>
+                                </div>
+
+                        </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+                </section>
         </div>
     </div>
 
     <!-- Shop-List-Modal-->
-    
-        <div class="modal left fade mt-5 pl-0 " id="modal-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable ml-4 mt-5 mb-5 pl-0" role="document">
 
-                <div class="modal-content col-sm-10">
-                    <div class="modal-header">
-                        <div class="col-sm-2 ml-3">
-                            <h5 class="modal-title"> Restaurantes</h5></div>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+    <div class="modal left fade mt-5 pl-0 " id="modal-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable ml-4 mt-5 mb-5 pl-0" role="document">
 
-                    </div>
-                    <div class="container-fluid mb-3 mt-3">
+            <div class="modal-content col-sm-10">
+                <div class="modal-header">
+                    <div class="col-sm-2 ml-3">
+                        <h5 class="modal-title"> Restaurantes</h5></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+
+                </div>
+                <div class="container-fluid mb-3 mt-3">
                     <div class="modal-body">
-                
-                        
-                            <div id="shops">
-                                <div class="container">
 
-                                    <div id="modal-row" class="row">
-                                        <div class="box">
-                                            <div class="rowTab">
-                                                <div class="row border-bottom mb-2 mt-2">
-                                                    <div class="col-sm-3">
-                                                        <div class="left">
-                                                            <div class="imgs">
-                                                                <div>
-                                                                    <i class="far fa-image fa-lg"></i>
-                                                                    <i class="far fa-image fa-lg"></i>
-                                                                </div>
-                                                                <div>
-                                                                    <i class="far fa-image fa-lg"></i>
-                                                                    <i class="far fa-image fa-lg"></i>
-                                                                </div>
+                        <div id="shops">
+                            <div class="container">
 
+                                <div id="modal-row" class="row">
+                                    <div class="box">
+                                        <div class="rowTab">
+                                            <div class="row border-bottom mb-2 mt-2">
+                                                <div class="col-sm-3">
+                                                    <div class="left">
+                                                        <div class="imgs">
+                                                            <div>
+                                                                <i class="far fa-image fa-lg"></i>
+                                                                <i class="far fa-image fa-lg"></i>
                                                             </div>
-                                                            <div class="stars"></div>
-                                                        </div>
-                                                    </div>
+                                                            <div>
+                                                                <i class="far fa-image fa-lg"></i>
+                                                                <i class="far fa-image fa-lg"></i>
+                                                            </div>
 
-                                                    <div class="col-sm-5">
-                                                        <div class="center">
-                                                            <h4 class="shop-name"></h4>
-                                                            <p class="phone"></p>
-                                                            <p class="address"></p>
-                                                            <a class="link-web"></a>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <div class="right">
-                                                            <ul class="logos">
-                                                                <i class="fab fa-instagram social"></i>
-                                                                <i class="fab fa-facebook social"></i>
-                                                                <i class="far fa-envelope"></i>
-                                                            </ul>
-                                                        </div>
+                                                        <div class="stars"></div>
                                                     </div>
                                                 </div>
 
+                                                <div class="col-sm-5">
+                                                    <div class="center">
+                                                        <h4 class="shop-name"></h4>
+                                                        <p class="phone"></p>
+                                                        <p class="address"></p>
+                                                        <a class="link-web"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="right">
+                                                        <ul class="logos">
+                                                            <i class="fab fa-instagram social"></i>
+                                                            <i class="fab fa-facebook social"></i>
+                                                            <i class="far fa-envelope"></i>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                         </div>
-                                    </div>
 
-                                    
+                                    </div>
                                 </div>
 
                             </div>
 
                         </div>
+
                     </div>
                 </div>
-
             </div>
+
         </div>
-    
+    </div>
+
     <!-- Shop-infowindow-Modal-->
     <div id="modal-row-infoWindow" class="row">
         <div class="container mb-3 mt-3">

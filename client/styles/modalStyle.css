@@ -34,6 +34,9 @@
   opacity: 0 !important;
 }
 
+.modal {
+  width:350px;}
+
 #map {
   height: 100%;
   width: 100%;
