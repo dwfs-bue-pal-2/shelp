@@ -40,7 +40,8 @@
                     <button type="button" class="btn btn-default" id="show-list" data-toggle="modal" data-target="#modal-list">Ver locales</button>
                 </span>
                     <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" id="open-form" data-toggle="modal" data-target="#modal-form">Agregar local</button>
+                            <a class="btn" href="#" id="open-form" data-toggle="modal" data-target="#modal-form">
+                                    <i class="far fa-plus-square fa-lg"></i></a>
 
                 </span>
 
@@ -135,7 +136,7 @@
                                 <div class="form-group row">
                                     <label for="load" class="col-sm-3 col-form-label ml-3">Cargar imagen</label>
                                     <div class="col-sm-8 ml-2">
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <input type="file" class="form-control-file" id="file">
                                     </div>
                                 </div>
 
@@ -172,7 +173,7 @@
                         <div id="shops">
                             <div class="container">
 
-                                <div id="modal-row" class="row">
+                                <div id="modal-row" class="row" style="display : none;" >
                                     <div class="box">
                                         <div class="rowTab">
                                             <div class="row border-bottom mb-2 mt-2">
@@ -195,7 +196,7 @@
 
                                                 <div class="col-sm-5">
                                                     <div class="center">
-                                                     <a href="#modal-shop" data-toggle="modal" data-target="#modal-shop"><h4 class="shop-name"></h4></a>
+                                                     <a href="#modal-shop" data-toggle="modal" data-target="#modal-shop"><h5 class="shop-name"></h5></a>
                                                         
                                                         <p class="phone"></p>
                                                         <p class="address"></p>
@@ -256,21 +257,26 @@
     </div>
 
     <!-- Shop-Detail-Modal-->
+    
 
     <div class="modal left fade mt-5 " id="modal-shop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-dialog-scrollable ml-4 mt-5 mb-5 pl-0" role="document">
             <div class="modal-content col-sm-10">
                 <div class="modal-header">
-                    <div class="col-sm-2 ml-3">
-                        <h5 class="modal-title"> Profile</h5></div>
+                    <div class="col-sm-4">
+                            <button class="back home-btn">Volver</button></div>
+
+                            <div class="col-sm-2 ml-3"> <h5 class="modal-title"> Profile</h5></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
 
                 </div>
                 <div class="modal-body">
+                    
                     <div id="shop-info">
                         <div class="container mb-3 mt-3">
-
-                            <div class="row">
+                           
+                           
+                            <div class="row  border-bottom mb-4 mt-2">
                                 <div class="col-sm-3">
                                     <div class="imgs">
                                         <div class="row">
@@ -279,23 +285,15 @@
                                         <div class="row">
                                             <i class="far fa-image"></i> <i class="far fa-image"></i>
                                         </div>
-                                        <div class="row">
-                                            <div class="stars">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-                                        </div>
+                                    
                                     </div>
                                 </div>
                                 <div class="col-sm-5">
                                     <div class="center">
-                                        <h5>Parrilla Don Julio</h5>
-                                        <p>011 4832-6058</p>
-                                        <p>Guatemala 4699, C1425 CABA</p>
-                                        <a href="www.parrilladonjulio.com">www.parrilladonjulio.com</a>
+                                        <h1 class="p-shop-name">Parrilla Don Julio</h5>
+                                        <p class="p-phone">011 4832-6058</p>
+                                        <p class="p-addres">Guatemala 4699, C1425 CABA</p>
+                                        <a class="p-web" href="www.parrilladonjulio.com">www.parrilladonjulio.com</a>
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
@@ -308,27 +306,29 @@
 
                             </div>
 
-                            <div class="row">
-                                <div class="rowTab">
-                                    <div class="description">
-                                        <h4>Descripción</h4>
-                                        <p class="p-description"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <h4>Reviews</h4>
-                            </div>
-                            <div class="row">
-                                <div class="reviews">
 
-                                </div>
-                                <div class="row">
-                                    <div class="addReview">
-                                        <button class="home-btn">Add review</button>
+                            <div class="row border-bottom mb-4 mt-2">
+                                    <div class="rowTab">
+                                      <div class="description">
+                                         <h4>Descripción</h4>            
+                                         <p class="p-description"></p>
+                                        </div>           
+                                      </div>
+                                      </div>
+                                    <div class="row border-bottom mb-4 mt-2">
+                                      <h4>Reviews</h4>
                                     </div>
-                                </div>
-                            </div>
+                                        <div class="row">
+                                        <div class="reviews">
+                                         
+                                        </div>
+                                        <div class="row border-bottom mb-4 mt-2">
+                                          <div class="addReview">
+                                            <button class="home-btn">Add review</button>
+                                            </div>
+                                        </div>
+
+                          
                         </div>
                     </div>
 

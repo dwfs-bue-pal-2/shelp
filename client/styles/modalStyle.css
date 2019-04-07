@@ -35,7 +35,7 @@
 }
 
 .modal {
-  width: 350px;
+  width: 450px !important;
 }
 
 #map {
@@ -58,14 +58,6 @@
   z-index: 1;
   background-color: white;
   border-radius: 10px;
-}
-
-#modal-list {
-  width: 40% !important;
-}
-
-.modal {
-  width: 200px;
 }
 
 a {

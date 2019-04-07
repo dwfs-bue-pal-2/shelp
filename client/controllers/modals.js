@@ -1,7 +1,7 @@
 // // // Get the modal
-// // var modal = document.getElementById("modal-list");
+var modal = document.getElementById("modal-list");
 // // var modalForm = document.getElementById("modal-form");
-// var modalShop = document.getElementById("modal-shop");
+var modalShop = document.getElementById("modal-shop");
 
 // // // Get the button that opens the modal
 // // var list = document.getElementById("show-list");
@@ -14,7 +14,7 @@
 // // var closeShop = document.getElementsByClassName("closeShop")[0];
 
 // // //Open previous modal
-// var back = document.getElementsByClassName("back")[0];
+var back = document.getElementsByClassName("back")[0];
 
 // // // When the user clicks the button, open the modal
 // // list.onclick = () => {
@@ -46,10 +46,10 @@
 // // };
 
 // // When the user clicks on Back, go back to List modal
-// back.onclick = () => {
-//   modalShop.style.display = "none";
-//   modal.style.display = "block";
-// };
+ back.onclick = () => {
+ modalShop.style.display = "none";
+ modal.style.display = "block";
+ };
 
 // // // When the user clicks anywhere outside of the modal, close it
 // // window.onclick = event => {
