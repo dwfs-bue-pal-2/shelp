@@ -1,4 +1,5 @@
 const serverUrl = "http://localhost:3000/";
+
 $(document).ready(() => {
   var infowindow = null;
   var marker;
@@ -53,11 +54,12 @@ $(document).ready(() => {
     getScore($modal, data.rating);
 
     $("#shops .container").append($modal);
-    $("#" + data.id).on("click", function() {
+    $("#" + data.id).on("click", () => {
       modal.style.display = "none";
       getShop(data.id);
     });
   };
+
   function createShopModal(data, reviews) {
     let $modalShop = $("#modal-shop");
     //CARGA INFO AL MODAL
@@ -101,7 +103,7 @@ $(document).ready(() => {
       animation: "drop"
     });
 
-    google.maps.event.addListener(marker, "click", function() {
+    google.maps.event.addListener(marker, "click", () => {
       let $modal = $("#modal-row-infoWindow").clone(true);
       $modal.removeAttr("id");
       $modal.find(".shop-name").text(data.name);
