@@ -34,6 +34,11 @@
   opacity: 0 !important;
 }
 
+.modal-backdrop {
+  display:none;
+}
+
+
 .modal {
   width: 450px !important;
 }
