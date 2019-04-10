@@ -8,12 +8,9 @@
   <title>Shelp</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link type="text/css" href="../styles/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y"
-    crossorigin="anonymous" />
-    
-   
-    
-    
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
+    integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous" />
+  <script src="../services/clientServices.js"></script>
 </head>
 
 <body>
@@ -47,93 +44,95 @@
       </div>
     </div>
   </div>
-  
+
   <!--Form - Modal-->
-  
+
   <modal id="modal-form" class="modal">
-  
+
     <section id="form">
-        <div class="scroll container">
-      <div class="close">&times;</div>
-      <h1>Agregar local</h1>
+      <div class="scroll container">
+        <div class="close">&times;</div>
+        <h1>Agregar local</h1>
 
-      <form id="alta-locales-form">
+        <form id="alta-locales-form">
 
-        
-  
-         <div class="rowTabForm">
-          <div class="labels">
-            <label id="name_label">Nombre</label>
-          </div>
-          <div class="rightTab">
-            <input type="text" maxlength="50" name="name" id="name" class="input-field" required/>
-          </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label for="comments"> Breve descripción </label>
-          </div>
-          <div class="rightTab">
-            <textarea id="comments" maxlength="700" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment"> </textarea>
-          </div>
-  
-        </div>
-  
-        <div class="rowTabForm">
-           <div class="labels">
-            <label>Dirección</label>
-          </div> 
-          <div class="rightTab">
-              <input type="text" name="direccion" maxlength="500" id="direccion" data-lat="0" data-lon="0" class="input-field" required/>
-          </div>
-        </div>
-  
-        <div id="align-right" class="rowTabForm">
-          <div class="rightTab">
-            <div class="location-form">Utilizar mi ubicación
-              <i class="fas fa-map-marker-alt"></i>
+
+
+          <div class="rowTabForm">
+            <div class="labels">
+              <label id="name_label">Nombre</label>
+            </div>
+            <div class="rightTab">
+              <input type="text" maxlength="50" name="name" id="name" class="input-field" required />
             </div>
           </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label>Telefono</label>
+
+          <div class="rowTabForm">
+            <div class="labels">
+              <label for="comments"> Breve descripción </label>
+            </div>
+            <div class="rightTab">
+              <textarea id="comments" maxlength="700" class="input-field" style="height:50px;resize:vertical;"
+                name="comment" placeholder="Enter your comment"> </textarea>
+            </div>
+
           </div>
-          <div class="rightTab">
-            <input type="" maxlength="10" name="telefono" id="telefono" class="input-field" required></input>
+
+          <div class="rowTabForm">
+            <div class="labels">
+              <label>Dirección</label>
+            </div>
+            <div class="rightTab">
+              <input type="text" name="direccion" maxlength="500" id="direccion" data-lat="0" data-lon="0"
+                class="input-field" required />
+            </div>
           </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label>Tipo de cocina
-            </label>
+
+          <div id="align-right" class="rowTabForm">
+            <div class="rightTab">
+              <div class="location-form">Utilizar mi ubicación
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+            </div>
           </div>
-          <div class="rightTab">
-            <select id="dropdown" name="currentPos" class="dropdown">
-              <option disabled value>Select an option</option>
-  
-              <option value="comida-rapida">Comida rápida</option>
-              <option value="vegetariana">Vegetariana</option>
-              <option value="cocina-de-autor">Cocina de autor</option>
-              <option value="asiatica">Asiática</option>
-              <option value="otros">Otros</option>
-  
-            </select>
+
+          <div class="rowTabForm">
+            <div class="labels">
+              <label>Telefono</label>
+            </div>
+            <div class="rightTab">
+              <input type="" maxlength="10" name="telefono" id="telefono" class="input-field" required></input>
+            </div>
           </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label>Horario</label>
+
+          <div class="rowTabForm">
+            <div class="labels">
+              <label>Tipo de cocina
+              </label>
+            </div>
+            <div class="rightTab">
+              <select id="dropdown" name="currentPos" class="dropdown">
+                <option disabled value>Select an option</option>
+
+                <option value="comida-rapida">Comida rápida</option>
+                <option value="vegetariana">Vegetariana</option>
+                <option value="cocina-de-autor">Cocina de autor</option>
+                <option value="asiatica">Asiática</option>
+                <option value="otros">Otros</option>
+
+              </select>
+            </div>
           </div>
-          <div class="rightTab">
-            <input type="text" name="horario" maxlength="50" id="horario" class="input-field" required></input>
+
+          <div class="rowTabForm">
+            <div class="labels">
+              <label>Horario</label>
+            </div>
+            <div class="rightTab">
+              <input type="text" name="horario" maxlength="50" id="horario" class="input-field" required></input>
+            </div>
           </div>
-        </div>
-  
+
           <div class="rowTabForm" id="lastRow">
             <div class="labels">
               <label id="cargarImagen"></label>Cargar imagen</label>
@@ -143,21 +142,21 @@
                 <div class="formContainer">
                   <i class="fas fa-file-upload icon"></i>
                 </div>
-                <input type="file" id="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif" >
+                <input type="file" id="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
               </label>
 
             </div>
           </div>
-  
+
           <button id="cancel" class="form-button" type="cancel">Cancelar</button>
 
           <button id="send" class="form-button" type="submit">Enviar</button>
-  
-  
-      </form>  
-    </div>
+
+
+        </form>
+      </div>
     </section>
-  
+
   </modal>
 
 
@@ -177,7 +176,7 @@
         <div id="modal-row" class="row">
           <div class="box">
             <div class="rowTab">
-              
+
               <div class="left">
                 <div class="imgs">
                   <div class="row">
@@ -212,40 +211,40 @@
   </modal>
   <!-- Shop-infowindow-Modal-->
   <div id="modal-row-infoWindow" class="row">
-      <div class="box">
-        <div class="rowTab">
-          
-          <div class="left">
-            <div class="imgs">
-              <div class="row">
-                <i class="far fa-image"></i>
-                <i class="far fa-image"></i>
-              </div>
-              <div class="row">
-                <i class="far fa-image"></i>
-                <i class="far fa-image"></i>
-              </div>
+    <div class="box">
+      <div class="rowTab">
+
+        <div class="left">
+          <div class="imgs">
+            <div class="row">
+              <i class="far fa-image"></i>
+              <i class="far fa-image"></i>
             </div>
-            <div class="stars"></div>
+            <div class="row">
+              <i class="far fa-image"></i>
+              <i class="far fa-image"></i>
+            </div>
           </div>
-          <div class="center">
-            <h1 class="shop-name"></h1>
-            <p class="phone"></p>
-            <p class="address"></p>
-            <a class="link-web" href="www.parrilladonjulio.com">www.sitioweb.com</a>
-          </div>
-          <div class="right">
-            <ul class="logos">
-              <i class="fab fa-instagram social"></i>
-              <i class="fab fa-facebook social"></i>
-              <i class="far fa-envelope"></i>
-            </ul>
-          </div>
+          <div class="stars"></div>
         </div>
+        <div class="center">
+          <h1 class="shop-name"></h1>
+          <p class="phone"></p>
+          <p class="address"></p>
+          <a class="link-web" href="www.parrilladonjulio.com">www.sitioweb.com</a>
+        </div>
+        <div class="right">
+          <ul class="logos">
+            <i class="fab fa-instagram social"></i>
+            <i class="fab fa-facebook social"></i>
+            <i class="far fa-envelope"></i>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
- 
- 
+
+
   <!-- Shop-Detail-Modal-->
   <modal id="modal-shop" class="modal">
 
@@ -254,84 +253,87 @@
       <div class="scroll container">
         <div class="closeShop">&times;</div>
         <button class="back home-btn">Volver a la lista</button>
-    
-  
-      <div class="row">
-       <div class="shop-info"><div class="box">
-        <div class="rowTab">
-                    <div class="left">
-                        <div class="imgs">
-                            <div class="row">
-                              <i class="far fa-image"></i>
-                              <i class="far fa-image"></i>
-                            </div>
-                            <div class="row">
-                              <i class="far fa-image"></i>
-                              <i class="far fa-image"></i>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="center">
-                    <h1 class="p-shop-name"></h1>
-                    <p class="p-phone"></p>
-                    <p class="p-addres"></p>
-                    <a class="p-web" href="www.parrilladonjulio.com"></a>
-                   </div>
-                   <div class="right">
-                      <ul class="logos">
-                          <i class="fab fa-instagram social"></i>
-                          <i class="fab fa-facebook social"></i>
-                          <i class="far fa-envelope"></i>
-                        </ul>
-                      </div>
-                    </div>
-                   </div>
-                </div>
-               </div>
-           <div class="row">
-              <div class="rowTab">
-                <div class="description">
-                   <h1 >Descripción</h1>            
-                   <p class="p-description"></p>
-                  </div>           
-                </div>
-                </div>
-              <div class="row">
-                <h1>Reviews</h1>
-              </div>
-                  <div class="row">
-                  <div class="reviews">
-                   
-                  </div>
-                  <div class="row">
-                    <div class="addReview">
-                      <button class="home-btn">Add review</button>
-                      </div>
-                  </div>
-                </div>
-        </div>
 
-        <div id="review-container" class="rowTab">
-            <div class="title">
-                <!-- <div class="stars"></div> -->
-                <p class="review-comment"></p>
-                <p class="review-author"></p>
+
+        <div class="row">
+          <div class="shop-info">
+            <div class="box">
+              <div class="rowTab">
+                <div class="left">
+                  <div class="imgs">
+                    <div class="row">
+                      <i class="far fa-image"></i>
+                      <i class="far fa-image"></i>
+                    </div>
+                    <div class="row">
+                      <i class="far fa-image"></i>
+                      <i class="far fa-image"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="center">
+                  <h1 class="p-shop-name"></h1>
+                  <p class="p-phone"></p>
+                  <p class="p-addres"></p>
+                  <a class="p-web" href="www.parrilladonjulio.com"></a>
+                </div>
+                <div class="right">
+                  <ul class="logos">
+                    <i class="fab fa-instagram social"></i>
+                    <i class="fab fa-facebook social"></i>
+                    <i class="far fa-envelope"></i>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        
-      
-        
+        </div>
+        <div class="row">
+          <div class="rowTab">
+            <div class="description">
+              <h1>Descripción</h1>
+              <p class="p-description"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h1>Reviews</h1>
+        </div>
+        <div class="row">
+          <div class="reviews">
+
+          </div>
+          <div class="row">
+            <div class="addReview">
+              <button class="home-btn">Add review</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="review-container" class="rowTab">
+        <div class="title">
+          <!-- <div class="stars"></div> -->
+          <p class="review-comment"></p>
+          <p class="review-author"></p>
+        </div>
+      </div>
+    </div>
+
+
+
   </modal>
-   <script src="../controllers/shops.js"></script>
+  <script src="../controllers/shops.js"></script>
   <script src="../controllers/controller-form.js"></script>
   <script src="../controllers/mapa.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&language=es&callback=inicializarMapa" async defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&language=es&callback=inicializarMapa"
+    async defer></script>
   <script src="../controllers/modals.js"></script>
 
 
- 
-    
+
+
 </body>
 
 </html>
