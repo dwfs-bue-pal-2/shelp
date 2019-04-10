@@ -47,6 +47,7 @@ function Service() {
   };
 
   this.post = async (req, res) => {
+    console.log(req)
     var query =
       "INSERT INTO shops (name, image, address, lat, lon, phone, type, description, hours) VALUES (?,?,?,?,?,?,?,?,?);";
     var result = await db.query(
