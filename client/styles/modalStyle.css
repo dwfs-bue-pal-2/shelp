@@ -42,7 +42,9 @@
   width: 450px !important;
   z-index: 1 !important;
 }
-
+.social {
+  padding-bottom: 20%;
+}
 #map {
   height: 100%;
   width: 100%;
@@ -55,6 +57,10 @@
 
 .pac-item {
   z-index: 1000 !important ;
+}
+
+.stars {
+  margin-top: 10%;
 }
 
 #search {
