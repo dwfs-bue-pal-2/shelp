@@ -1,6 +1,8 @@
 const server = "http://localhost:3000/locales";
 
 $(document).ready(function () {
+    getShopList(markShops);
+
     $("form").keypress((e) => {
         if (e.which === 13){
             return false;
@@ -18,7 +20,9 @@ $(document).ready(function () {
         $("#modal-form")[0].style.display = "none";
     });
 
-
+    $('#show-list').on('click', (e) => { 
+        getShops();
+    });
 });
 
 function clearForm() {
