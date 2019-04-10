@@ -1,64 +1,62 @@
-var name, description, address, lat, lon, phone, type, hours, img;
+const server = "http://localhost:3000/locales";
 
-$(document).ready(function() {
+$(document).ready(function () {
+    getShopList(markShops);
 
-    $("form").keypress(function(e) {
-        if (e.which == 13) {
+    $("form").keypress((e) => {
+        if (e.which === 13){
             return false;
         }
     });
 
-    $('#send').on('click', function(e) {
+    $('#send').on('click',(e) => {
         e.preventDefault();
         getLatLong($("#direccion").val());
     });
 
-    $('#cancel').on('click', function(e) {
+    $('#cancel').on('click', (e) => { 
         e.preventDefault();
         clearForm();
         $("#modal-form")[0].style.display = "none";
     });
 
+    $('#show-list').on('click', (e) => { 
+        getShops();
+    });
 });
 
 function clearForm() {
     $("#alta-locales-form").find("input, textarea").val("");
 };
 
-function saveShop(latitud, longitud){
-     name = $("#name").val();
-        description = $("#comments").val();
-        address = $("#direccion").val();
-        lat = latitud;
-        lon = longitud;
-        phone = $("#telefono").val();
-        type = $("#dropdown").val();
-        hours = $("#horario").val();
-        img = $("#file").val();
+function saveShop(lat, lon) {
+    let shop = {
+        name: $("#name").val(),
+        desc: $("#comments").val(),
+        address: $("#direccion").val(),
+        lat: lat,
+        lon: lon,
+        phone: $("#telefono").val(),
+        type: $("#dropdown").val(),
+        hours: $("#horario").val(),
+        img: $("#file").val()
+    }
 
-        if (name && description && address && type && phone && hours && lat ) {
-
-            $.post("http://localhost:3000/locales", {
-                    name: name,
-                    description: description,
-                    address: address,
-                    lat: lat,
-                    lon: lon,
-                    phone: phone,
-                    type: type,
-                    hours: hours,
-                    img: img
-                },
-                function(data, status) {
-
-                    console.log(" Status: " + status);
-                    if (status == 'success') {
-                        alert('El local ' + name + ' fue dado de alta con exito!');
-                        clearForm();
-                    }
-                });
-        } else {
-            alert('Debe completar todos los campos');
+    $.post(server, {
+        name: shop.name,
+        description: shop.desc,
+        address: shop.address,
+        lat: shop.lat,
+        lon: shop.lon,
+        phone: shop.phone,
+        type: shop.type,
+        hours: shop.hours,
+        img: shop.img
+    }, (data, status) => {
+        console.log(`Status: ${status}`);
+        if (status === 'success') {
+            alert(`El local ${name} fue dado de alta con exito!`);
+            clearForm();
         }
-
+    });     
 };

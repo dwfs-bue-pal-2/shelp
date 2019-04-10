@@ -1,3 +1,4 @@
+SET NAMES `utf8`;
 DROP DATABASE IF EXISTS `shelp`;
 CREATE DATABASE `shelp`;
 USE `shelp`;
@@ -22,7 +23,7 @@ LOCK TABLES `shops` WRITE;
 INSERT INTO `shops`
 VALUES
     (1, 'Chori', 11111111111111112, 'Thames 1653, CABA.',-34.587678, -58.430562, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
-    (2, 'Osaka', 11111111111111112, 'Soler 5608, CABA.',-34.580588, -58.432815, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
+    (2, 'Osaka', 11111111111111112, 'Soler 5608, CABA.',-34.580588, -58.432815, 1139669857, 'Restaurant', 'b , es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
     (3, 'Koh Lanta', 11111111111111112, 'Gorriti 4647, CABA.',-34.591637, -58.427352, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
     (4, 'La choza de Gascon', 11111111111111112, 'Gascon 1701, CABA.',-34.589760, -58.422216, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
     (5, 'Cooperativa Ale Ale', 11111111111111112, 'José A. Cabrera 4270, CABA.',-34.594836, -58.425406, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1),
@@ -99,3 +100,5 @@ VALUES
     (17,5,1,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1),    
     (18,6,10,4,'Lorem Impsum review review', CURRENT_TIMESTAMP, 1);   
 UNLOCK TABLES;
+
+INSERT INTO shops VALUES (13, 'Chori', 11111111111111112, 'Thames 1653, CABA.',-34.587678, -58.430562, 1139669857, 'Restaurant', 'Chori, es un pequeño lugar de Palermo que homenajea al sándwich emblema de la tradición parrillera argentina, el choripán.', 'Martes a Domingo. 12:30 a 00:30', 1);
