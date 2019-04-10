@@ -35,12 +35,12 @@
 }
 
 .modal-backdrop {
-  display:none;
+  display: none;
 }
-
 
 .modal {
   width: 450px !important;
+  z-index: 1 !important;
 }
 
 #map {
@@ -53,10 +53,9 @@
   z-index: 0;
 }
 
-/* .modal {
-  position: fixed;
-  z-index: 1;
-} */
+.pac-item {
+  z-index: 1000 !important ;
+}
 
 #search {
   position: relative;
