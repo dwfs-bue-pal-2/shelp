@@ -36,6 +36,8 @@ router.get("/", ctl.getAll);
 
 router.get("/:id", ctl.getById);
 
+router.get("/findShop/:name", ctl.getLocalByName);
+
 router.post("/", upload.single("shopImage"), ctl.post);
 
 router.put("/:id", ctl.put);

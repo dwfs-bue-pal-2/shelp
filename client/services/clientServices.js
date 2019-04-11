@@ -28,3 +28,13 @@ getShopData = (id, callback) => {
       });
 }
 
+getShopByName = (element, callback) => {
+  $.ajax({
+      method: "GET",
+      url: serverUrl + "locales/findShop/" + $(element).val(),
+      success: function(data) {
+        callback(element, data);
+      }
+    });
+}
+

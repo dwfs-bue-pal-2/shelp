@@ -32,6 +32,11 @@ function Controller() {
     var result = await srv.deleteById(req, res);
     res.status(200).send(JSON.stringify(result));
   };
+
+  this.getLocalByName = async (req, res) => {
+    var result = await srv.getLocalByName(req, res);
+    res.status(200).send(JSON.stringify(result));
+  };
 }
 
 module.exports = Controller;
