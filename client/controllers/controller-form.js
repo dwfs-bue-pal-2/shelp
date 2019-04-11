@@ -73,14 +73,15 @@ function saveShop(lat, lon) {
 
 autocomplete = (element, data) => {
 
-    let names = [];
+    let matchs = [];
 
-    data.map(element => names.push(element.name));
+    data.map(element => {
+        matchs.push({id: element.id, name: element.name})});
 
 
     $( function() {
         $("#searchShop").autocomplete({
-          source: names
+          source: matchs.name
         });
       } );
 
