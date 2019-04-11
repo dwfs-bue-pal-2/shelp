@@ -48,10 +48,11 @@ function Service() {
 
   this.getLocalByName = async (req, res) => {
     var query =
-      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s JOIN reviews r ON s.id = r.shop_id WHERE" +
+      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s LEFT JOIN reviews r ON s.id = r.shop_id WHERE" +
       " s.name like '" +
       req.params.name +
-      "%' GROUP BY r.shop_id;";
+      "%' GROUP BY s.id;";
+      console.log(query)
     var result = await db.query(query);
 
     let shops = [];
