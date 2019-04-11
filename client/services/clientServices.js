@@ -33,7 +33,7 @@ getShopByName = (element, callback) => {
       method: "GET",
       url: serverUrl + "locales/findShop/" + $(element).val(),
       success: function(data) {
-        callback(element, data);
+        callback(element, JSON.parse(data));
       }
     });
 }

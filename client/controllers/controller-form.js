@@ -72,17 +72,6 @@ function saveShop(lat, lon) {
 };
 
 autocomplete = (element, data) => {
-    //console.log(Array.isArray(Array.of(data)));
-    //console.log(Array.of(data));
-    let names = Array.of(data).map(element => element.name) ;
-    console.log(names);
-        //console.log(names);
-   
-    //for(let variable of data.name){
-        //console.log(variable);
-    ///}
-    
-    
-    
-    //console.log(data);
+    let names = data.map(element => element.name) ;
+        console.log(names);
 }
