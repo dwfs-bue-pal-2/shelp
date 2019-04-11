@@ -31,19 +31,7 @@ function Service() {
       id +
       " GROUP BY r.shop_id;";
     var result = await db.query(query);
-    return {
-      id: result[0].id,
-      name: result[0].name,
-      image: result[0].image,
-      address: result[0].address,
-      lat: result[0].lat,
-      lon: result[0].lon,
-      phone: result[0].phone,
-      type: result[0].type,
-      description: result[0].description,
-      hours: result[0].hours,
-      rating: result[0].score
-    };
+    return result[0];
   };
 
   this.getLocalByName = async (req, res) => {
@@ -52,7 +40,7 @@ function Service() {
       " s.name like '" +
       req.params.name +
       "%' GROUP BY s.id;";
-      console.log(query)
+    console.log(query);
     var result = await db.query(query);
 
     let shops = [];
@@ -60,7 +48,7 @@ function Service() {
       let shop = {
         name: element.name,
         id: element.id
-      }
+      };
       shops.push(shop);
     });
 
