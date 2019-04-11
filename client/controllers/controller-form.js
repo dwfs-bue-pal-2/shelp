@@ -4,34 +4,34 @@ $(document).ready(function () {
     getShopList(markShops);
 
     $("form").keypress((e) => {
-        if (e.which === 13){
+        if (e.which === 13) {
             return false;
         }
     });
 
-    $('#send').on('click',(e) => {
+    $('#send').on('click', (e) => {
         e.preventDefault();
         getLatLong($("#direccion").val());
     });
 
-    $('#cancel').on('click', (e) => { 
+    $('#cancel').on('click', (e) => {
         e.preventDefault();
         clearForm();
         $("#modal-form")[0].style.display = "none";
     });
 
-    $('#show-list').on('click', (e) => { 
+    $('#show-list').on('click', (e) => {
         getShops();
     });
 
-    $('#show-list').on('click', (e) => { 
+    $('#show-list').on('click', (e) => {
         getShops();
     });
 
     $("#searchShop").keyup(function () {
-       //if($(this).val().length >= 3){
-            getShopByName(this, autocomplete);
-       //}
+        //if($(this).val().length >= 3){
+        getShopByName(this, autocomplete);
+        //}
     });
 });
 
@@ -68,10 +68,20 @@ function saveShop(lat, lon) {
             alert(`El local ${name} fue dado de alta con exito!`);
             clearForm();
         }
-    });     
+    });
 };
 
 autocomplete = (element, data) => {
-    let names = data.map(element => element.name) ;
-        console.log(names);
+
+    let names = [];
+
+    data.map(element => names.push(element.name));
+
+
+    $( function() {
+        $("#searchShop").autocomplete({
+          source: names
+        });
+      } );
+
 }

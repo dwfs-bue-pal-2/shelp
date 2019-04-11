@@ -53,7 +53,17 @@ function Service() {
       req.params.name +
       "%' GROUP BY r.shop_id;";
     var result = await db.query(query);
-    return JSON.parse(JSON.stringify(result));
+
+    let shops = [];
+    result.map(element => {
+      let shop = {
+        name: element.name,
+        id: element.id
+      }
+      shops.push(shop);
+    });
+
+    return JSON.parse(JSON.stringify(shops));
   };
 
   this.post = async (req, res) => {
