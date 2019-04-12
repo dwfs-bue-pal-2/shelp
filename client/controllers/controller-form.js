@@ -12,6 +12,8 @@ $(document).ready(function () {
     $('#send').on('click',(e) => {
         e.preventDefault();
         getLatLong($("#direccion").val());
+        $("#modal-form")[0].style.display = "none";
+
     });
 
     $('#cancel').on('click', (e) => { 

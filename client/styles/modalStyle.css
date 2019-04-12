@@ -1,3 +1,7 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .modal.left .modal-dialog {
   position: fixed;
   margin: auto;
