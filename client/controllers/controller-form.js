@@ -40,8 +40,8 @@ function saveShop(lat, lon) {
         lon: lon,
         phone: $("#telefono").val(),
         type: $("#dropdown").val(),
-        hours: $("#horario").val(),
-        img: $("#file").val()
+        hours: $("#horario").val()//,
+        //img: $("#file").val()
     }
 
     $.post(server, {
@@ -52,8 +52,8 @@ function saveShop(lat, lon) {
         lon: shop.lon,
         phone: shop.phone,
         type: shop.type,
-        hours: shop.hours,
-        img: shop.img
+        hours: shop.hours//,
+        // img: shop.img
     }, (data, status) => {
         console.log(`Status: ${status}`);
         if (status === 'success') {
