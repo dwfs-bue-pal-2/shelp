@@ -12,37 +12,11 @@ inicializarMapa = () => {
     mapTypeId: "roadmap"
   };
 
-<<<<<<< HEAD
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-				var pos = {
-					lat: position.coords.latitude,
-					lng: position.coords.longitude
-				};
-
-				infoWindow = new google.maps.InfoWindow;
-
-				infoWindow.setPosition(pos);
-				infoWindow.setContent('Ubicacion actual');
-				infoWindow.open(map);
-				map.setCenter(pos);
-			}, function() {
-				handleLocationError(true, infoWindow, map.getCenter());
-			});
-		} else {
-			// Browser doesn't support Geolocation
-			handleLocationError(false, infoWindow, map.getCenter());
-			console.log("errrr");
-		}       
-       
-}
-=======
   map = new google.maps.Map(document.getElementById("map"), mapObj);
 
   var input = document.getElementById("direccion");
   var searchBox = new google.maps.places.SearchBox(input);
 };
->>>>>>> 08678aec495c7b585c361f4c8e4536107da3e21f
 
 getLatLong = direccion => {
   geocoder = new google.maps.Geocoder();

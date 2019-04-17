@@ -4,7 +4,7 @@ var revSrvc = new reviewsService();
 function Service() {
   this.getAll = async (req, res) => {
     var query =
-      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s LEFT JOIN reviews r ON s.id = r.shop_id GROUP BY s.id;";
+      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, ROUND(AVG(r.score),0) as score FROM shops s LEFT JOIN reviews r ON s.id = r.shop_id GROUP BY s.id;";
     var result = await db.query(query);
     var response = [];
     for (var i = 0; i < result.length; i++) {
@@ -27,10 +27,11 @@ function Service() {
 
   this.getById = async (id, res) => {
     var query =
-      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s JOIN reviews r ON s.id = r.shop_id WHERE s.id=" +
+      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, ROUND(AVG(r.score),0) as score FROM shops s JOIN reviews r ON s.id = r.shop_id WHERE s.id=" +
       id +
       " GROUP BY r.shop_id;";
     var result = await db.query(query);
+    console.log(result[0].score)
     return {
       id: result[0].id,
       name: result[0].name,
@@ -53,7 +54,7 @@ function Service() {
       query,
       [
         req.body.name,
-        req.file.path,
+        "", // req.file.path,
         req.body.address,
         req.body.lat,
         req.body.lon,
