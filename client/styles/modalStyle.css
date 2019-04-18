@@ -1,0 +1,79 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.modal.left .modal-dialog {
+  position: fixed;
+  margin: auto;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content {
+  overflow-y: auto;
+}
+
+.modal.left .modal-body {
+  padding: 15px 15px 80px;
+}
+
+.modal.left.fade .modal-dialog {
+  left: -320px;
+  -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+  transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog {
+  left: 0;
+}
+.modal.left.fade.show .modal-dialog {
+  left: 0;
+}
+
+.modal-backdrop {
+  opacity: 0 !important;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+.modal {
+  width: 450px !important;
+  z-index: 1 !important;
+}
+.social {
+  padding-bottom: 20%;
+}
+#map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.pac-item {
+  z-index: 1000 !important ;
+}
+
+.stars {
+  margin-top: 10%;
+}
+
+#search {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}

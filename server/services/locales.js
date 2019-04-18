@@ -4,7 +4,7 @@ var revSrvc = new reviewsService();
 function Service() {
   this.getAll = async (req, res) => {
     var query =
-      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s LEFT JOIN reviews r ON s.id = r.shop_id GROUP BY s.id;";
+      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, ROUND(AVG(r.score),0) as score FROM shops s LEFT JOIN reviews r ON s.id = r.shop_id GROUP BY s.id;";
     var result = await db.query(query);
     var response = [];
     for (var i = 0; i < result.length; i++) {
@@ -27,7 +27,7 @@ function Service() {
 
   this.getById = async (id, res) => {
     var query =
-      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, AVG(r.score) as score FROM shops s JOIN reviews r ON s.id = r.shop_id WHERE s.id=" +
+      "SELECT s.id, s.name, s.image, s.address, s.lat, s.lon, s.phone, s.type, s.description, s.hours, ROUND(AVG(r.score),0) as score FROM shops s JOIN reviews r ON s.id = r.shop_id WHERE s.id=" +
       id +
       " GROUP BY r.shop_id;";
     var result = await db.query(query);
@@ -47,38 +47,44 @@ function Service() {
   };
 
   this.post = async (req, res) => {
-    console.log(req)
-    var query =
+    if( Object.keys(req.body).length === 0 && req.body.constructor === Object){
+      return res.status(400).send("No se recibio el contenido");
+    }
+    if(!req.file){
+      return res.status(400).send("No se recibio el archivo");
+    }
+      var query =
       "INSERT INTO shops (name, image, address, lat, lon, phone, type, description, hours) VALUES (?,?,?,?,?,?,?,?,?);";
-    var result = await db.query(
-      query,
-      [
-        req.body.name,
-        req.file.path,
-        req.body.address,
-        req.body.lat,
-        req.body.lon,
-        req.body.phone,
-        req.body.type,
-        req.body.description,
-        req.body.hours
-      ],
-      function(error, results, fields) {
-        if (error) {
+      var result = await db.query(
+        query,
+        [
+          req.body.name,
+          req.file.path,
+          req.body.address,
+          req.body.lat,
+          req.body.lon,
+          req.body.phone,
+          req.body.type,
+          req.body.description,
+          req.body.hours
+        ],
+        function(error, results, fields) {
+          if (error) {
           console.log("hubo un error en la consulta POST", error.message);
           return res.status(404).send("Hubo un error en la consulta POST");
         }
         res.status(200).send(JSON.stringify(results));
       }
-    );
-    return result;
-  };
-
-  this.put = async (req, res) => {
-    var query = ` UPDATE shops SET name = ?, image = ?, 
-                  address = ?, lat = ?, lon = ?,
-                  phone = ?, type = ?, description = ?, 
-                  hours = ? WHERE id = ? ;`;
+      );
+      return result;
+    
+    };
+    
+    this.put = async (req, res) => {
+      var query = ` UPDATE shops SET name = ?, image = ?, 
+      address = ?, lat = ?, lon = ?,
+      phone = ?, type = ?, description = ?, 
+      hours = ? WHERE id = ? ;`;
     var data = [
       req.body.name,
       req.file.path,

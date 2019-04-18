@@ -2,336 +2,351 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Shelp</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link type="text/css" href="../styles/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y"
-    crossorigin="anonymous" />
-    
-   
-    
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shelp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link type="text/css" href="../styles/modalStyle.css" rel="stylesheet" />
+    <link type="text/css" href="../styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous" />
+    <script src="../services/clientServices.js"></script>
+
 </head>
 
 <body>
-  <div id="map"></div>
 
-  <div id="search">
+    <div id="map"></div>
 
-    <div class="search-box">
-      <div class="search_input_wrapper">
-        <span class="input_text">Buscar</span>
-      </div>
+    <!-- Search form -->
+    <div class='col-sm-5 mt-4 ml-4 mb-4 pl-2 pr-2 pt-0'>
+        <div class="container">
+            <div id="search" class="">
 
-      <div class="input_field_wrapper">
-        <span class="input_field">
-          <input type="text" class="input_field" name="finder" id="finder" />
-        </span>
-      </div>
-
-      <div class="location-item">
-        <div class="location">
-          <i class="fas fa-map-marker-alt"></i>
-        </div>
-      </div>
-
-      <div class="view-list">
-        <button id="show-list" class="home-btn">Ver locales</button>
-      </div>
-
-      <div class="view-form">
-        <button id="open-form" class="home-btn">Agregar local</button>
-      </div>
-    </div>
-  </div>
-  
-  <!--Form - Modal-->
-  
-  <modal id="modal-form" class="modal">
-  
-    <section id="form">
-        <div class="scroll container">
-      <div class="close">&times;</div>
-      <h1>Agregar local</h1>
-
-      <form id="alta-locales-form">
-
-        
-  
-         <div class="rowTabForm">
-          <div class="labels">
-            <label id="name_label">Nombre</label>
-          </div>
-          <div class="rightTab">
-            <input type="text" maxlength="50" name="name" id="name" class="input-field" required/>
-          </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label for="comments"> Breve descripción </label>
-          </div>
-          <div class="rightTab">
-            <textarea id="comments" maxlength="700" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment"> </textarea>
-          </div>
-  
-        </div>
-  
-        <div class="rowTabForm">
-           <div class="labels">
-            <label>Dirección</label>
-          </div> 
-          <div class="rightTab">
-              <input type="text" name="direccion" maxlength="500" id="direccion" data-lat="0" data-lon="0" class="input-field" required/>
-          </div>
-        </div>
-  
-        <div id="align-right" class="rowTabForm">
-          <div class="rightTab">
-            <div class="location-form">Utilizar mi ubicación
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-          </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label>Telefono</label>
-          </div>
-          <div class="rightTab">
-            <input type="" maxlength="10" name="telefono" id="telefono" class="input-field" required></input>
-          </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label>Tipo de cocina
-            </label>
-          </div>
-          <div class="rightTab">
-            <select id="dropdown" name="currentPos" class="dropdown">
-              <option disabled value>Select an option</option>
-  
-              <option value="comida-rapida">Comida rápida</option>
-              <option value="vegetariana">Vegetariana</option>
-              <option value="cocina-de-autor">Cocina de autor</option>
-              <option value="asiatica">Asiática</option>
-              <option value="otros">Otros</option>
-  
-            </select>
-          </div>
-        </div>
-  
-        <div class="rowTabForm">
-          <div class="labels">
-            <label>Horario</label>
-          </div>
-          <div class="rightTab">
-            <input type="text" name="horario" maxlength="50" id="horario" class="input-field" required></input>
-          </div>
-        </div>
-  
-          <div class="rowTabForm" id="lastRow">
-            <div class="labels">
-              <label id="cargarImagen"></label>Cargar imagen</label>
-            </div>
-            <div class="rightTab">
-              <label class="custom-file-upload">
-                <div class="formContainer">
-                  <i class="fas fa-file-upload icon"></i>
-                </div>
-                <input type="file" id="file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif" >
-              </label>
-
-            </div>
-          </div>
-  
-          <button id="cancel" class="form-button" type="cancel">Cancelar</button>
-
-          <button id="send" class="form-button" type="submit">Enviar</button>
-  
-  
-      </form>  
-    </div>
-    </section>
-  
-  </modal>
-
-
-
-
-
-
-  <!-- Shop-List-Modal-->
-  <modal id="modal-list" class="modal">
-
-    <div id="shops">
-
-      <div class="scroll container">
-        <div class="closeList">&times;</div>
-        <h1>Restaurantes</h1>
-
-        <div id="modal-row" class="row">
-          <div class="box">
-            <div class="rowTab">
-              
-              <div class="left">
-                <div class="imgs">
-                  <div class="row">
-                    <i class="far fa-image"></i>
-                    <i class="far fa-image"></i>
-                  </div>
-                  <div class="row">
-                    <i class="far fa-image"></i>
-                    <i class="far fa-image"></i>
-                  </div>
-                </div>
-                <div class="stars"></div>
-              </div>
-              <div class="center">
-                <h1 class="shop-name"></h1>
-                <p class="phone"></p>
-                <p class="address"></p>
-                <a class="link-web" href="www.parrilladonjulio.com">www.sitioweb.com</a>
-              </div>
-              <div class="right">
-                <ul class="logos">
-                  <i class="fab fa-instagram social"></i>
-                  <i class="fab fa-facebook social"></i>
-                  <i class="far fa-envelope"></i>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </modal>
-  <!-- Shop-infowindow-Modal-->
-  <div id="modal-row-infoWindow" class="row">
-      <div class="box">
-        <div class="rowTab">
-          
-          <div class="left">
-            <div class="imgs">
-              <div class="row">
-                <i class="far fa-image"></i>
-                <i class="far fa-image"></i>
-              </div>
-              <div class="row">
-                <i class="far fa-image"></i>
-                <i class="far fa-image"></i>
-              </div>
-            </div>
-            <div class="stars"></div>
-          </div>
-          <div class="center">
-            <h1 class="shop-name"></h1>
-            <p class="phone"></p>
-            <p class="address"></p>
-            <a class="link-web" href="www.parrilladonjulio.com">www.sitioweb.com</a>
-          </div>
-          <div class="right">
-            <ul class="logos">
-              <i class="fab fa-instagram social"></i>
-              <i class="fab fa-facebook social"></i>
-              <i class="far fa-envelope"></i>
-            </ul>
-          </div>
-        </div>
-    </div>
-  </div>
- 
- 
-  <!-- Shop-Detail-Modal-->
-  <modal id="modal-shop" class="modal">
-
-    <div id="details">
-
-      <div class="scroll container">
-        <div class="closeShop">&times;</div>
-        <button class="back home-btn">Volver a la lista</button>
-    
-  
-      <div class="row">
-       <div class="shop-info"><div class="box">
-        <div class="rowTab">
-                    <div class="left">
-                        <div class="imgs">
-                            <div class="row">
-                              <i class="far fa-image"></i>
-                              <i class="far fa-image"></i>
-                            </div>
-                            <div class="row">
-                              <i class="far fa-image"></i>
-                              <i class="far fa-image"></i>
-                            </div>
-                          </div>
+                <div class="input-group">
+                    <div class="input-group-btn search-panel">
+                        <button type="button" class="btn btn-default">
+                            <span class="search_by">Buscar</span>
+                        </button>
                     </div>
-                    <div class="center">
-                    <h1 class="p-shop-name"></h1>
-                    <p class="p-phone"></p>
-                    <p class="p-addres"></p>
-                    <a class="p-web" href="www.parrilladonjulio.com"></a>
-                   </div>
-                   <div class="right">
-                      <ul class="logos">
-                          <i class="fab fa-instagram social"></i>
-                          <i class="fab fa-facebook social"></i>
-                          <i class="far fa-envelope"></i>
-                        </ul>
-                      </div>
-                    </div>
-                   </div>
+
+                    <input type="text" class="form-control w-20" id="buscar" name="x">
+
+                    <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="fas fa-search" aria-hidden="true"></i></button></span>
+                    <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="fas fa-map-marker-alt"></i></button></span>
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" id="show-list" data-toggle="modal" data-target="#modal-list">Ver locales</button>
+                </span>
+                    <span class="input-group-btn">
+                            <a class="btn" href="#" id="open-form" data-toggle="modal" data-target="#modal-form">
+                                    <i class="far fa-plus-square fa-lg"></i></a>
+
+                </span>
+
                 </div>
-               </div>
-           <div class="row">
-              <div class="rowTab">
-                <div class="description">
-                   <h1 >Descripción</h1>            
-                   <p class="p-description"></p>
-                  </div>           
-                </div>
-                </div>
-              <div class="row">
-                <h1>Reviews</h1>
-              </div>
-                  <div class="row">
-                  <div class="reviews">
-                   
-                  </div>
-                  <div class="row">
-                    <div class="addReview">
-                      <button class="home-btn">Add review</button>
-                      </div>
-                  </div>
-                </div>
+            </div>
         </div>
 
-        <div id="review-container" class="rowTab">
-            <div class="title">
-                <!-- <div class="stars"></div> -->
-                <p class="review-comment"></p>
-                <p class="review-author"></p>
-              </div>
+    </div>
+
+    <!-- Modal form-->
+    <div class="modal left fade mt-5" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" backdrop="true" keyboard="true">
+        <div class="modal-dialog mt-5 ml-4 mb-5" role="document">
+            <section id="form">
+                <div class="modal-content col-sm-10">
+                    <div class="modal-header">
+                        <div class="col-sm-6 ml-3">
+                            <h5 class="modal-title"> Agregar Local</h5></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <form id="alta-locales-form">
+                            <div class="container mb-3 mt-3">
+
+                                <div class="form-group row">
+                                    <label for="name" id="name_label" class="col-sm-3 col-form-label ml-3">Nombre</label>
+
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="text" class="form-control" maxlength="50" id="name" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="comments" class="col-sm-3 col-form-label ml-3"> Breve descripción </label>
+
+                                    <div class="col-sm-8  ml-2">
+                                        <textarea id="comments" maxlength="700" class="form-control" name="comment"> </textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="address" class="col-sm-3 col-form-label ml-3">Dirección</label>
+
+                                    <div class="col-sm-8  ml-2">
+
+                                        <input type="text" class="form-control" name="address" id="direccion" data-lat="0" data-lon="0" maxlength="50" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-3 col-form-label ml-3"></div>
+
+                                    <div class="col-sm-8 ml-2">Utilizar mi ubicación
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone" class="col-sm-3 col-form-label ml-3">Telefono</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="" maxlength="10" name="telefono" id="telefono" class="form-control" required></input>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="type" class="col-sm-3 col-form-label ml-3">Cocina</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <select id="dropdown" name="currentPos" class="dropdown form-control">
+                                            <option disabled value>Select an option</option>
+
+                                            <option value="comida-rapida">Comida rápida</option>
+                                            <option value="vegetariana">Vegetariana</option>
+                                            <option value="cocina-de-autor">Cocina de autor</option>
+                                            <option value="asiatica">Asiática</option>
+                                            <option value="otros">Otros</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="horario" class="col-sm-3 col-form-label ml-3">Horario</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="text" name="horario" maxlength="50" id="horario" class="form-control"></input>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <label for="load" class="col-sm-3 col-form-label ml-3">Cargar imagen</label>
+                                    <div class="col-sm-8 ml-2">
+                                        <input type="file" id="file" class="form-control-file" size="20" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                                    </div>
+                                </div>
+
+                                <div class="float-right">
+
+                                    <button id="cancel" class="form-button" type="cancel">Cancelar</button>
+
+                                    <button id="send" class="form-button" type="submit">Enviar</button>
+                                </div>
+
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Shop-List-Modal-->
+
+    <div class="modal left fade mt-5 pl-0 " id="modal-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable ml-4 mt-5 mb-5 pl-0" role="document">
+
+            <div class="modal-content col-sm-10">
+                <div class="modal-header">
+                    <div class="col-sm-2 ml-3">
+                        <h5 class="modal-title"> Restaurantes</h5></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+
+                </div>
+                <div class="container-fluid mb-3 mt-3">
+                    <div class="modal-body">
+
+                        <div id="shops">
+                            <div class="container">
+
+                                <div id="modal-row" class="row" style="display : none;">
+                                    <div class="box">
+                                        <div class="rowTab">
+                                            <div class="row border-bottom mb-2 mt-2">
+                                                <div class="col-sm-3">
+                                                    <div class="left">
+                                                        <div class="imgs">
+                                                            <div>
+                                                                <i class="far fa-image fa-lg"></i>
+                                                                <i class="far fa-image fa-lg"></i>
+                                                            </div>
+                                                            <div>
+                                                                <i class="far fa-image fa-lg"></i>
+                                                                <i class="far fa-image fa-lg"></i>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="stars"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-5">
+                                                    <div class="center">
+                                                        <a href="#modal-shop" data-toggle="modal" data-target="#modal-shop"><h5 class="shop-name"></h5></a>
+
+                                                        <p class="phone"></p>
+                                                        <p class="address"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="right">
+                                                        <ul class="logos">
+                                                            <i class="fab fa-instagram social fa-lg"></i>
+                                                            <i class="fab fa-facebook social fa-lg"></i>
+                                                            <i class="far fa-envelope social fa-lg"></i>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
-          </div>
-        
-      
-        
-  </modal>
-   <script src="../controllers/shops.js"></script>
-  <script src="../controllers/controller-form.js"></script>
-  <script src="../controllers/mapa.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&language=es&callback=inicializarMapa" async defer></script>
-  <script src="../controllers/modals.js"></script>
 
+        </div>
+       
+    </div>
+    </div>
 
- 
-    
+    <!-- Shop-infowindow-Modal-->
+    <div id="modal-row-infoWindow" class="row">
+        <div class="container mb-3 mt-3">
+            <div class="shop-info">
+                <div class="box">
+                    <div class="rowTab">
+
+                        <div class="row">
+
+                            <div class="col-sm-12">
+
+                                <div class="center">
+                                    <h3 class="shop-name"></h3>
+                                    <p class="phone"></p>
+                                    <p class="address"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop-Detail-Modal-->
+
+    <div class="modal left fade mt-5 " id="modal-shop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-scrollable ml-4 mt-5 mb-5 pl-0" role="document">
+            <div class="modal-content col-sm-10">
+                <div class="modal-header">
+                    <div class="col-sm-4">
+                        <button class="back home-btn btn">Volver</button>
+                    </div>
+
+                    <div class="col-sm-2 ml-3">
+                        <h5 class="modal-title"> Profile</h5></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+
+                </div>
+                <div class="modal-body">
+
+                    <div id="shop-info">
+                        <div class="container mb-3 mt-3">
+
+                            <div class="row  border-bottom mb-4 mt-2">
+                                <div class="col-sm-3">
+                                    <div class="imgs">
+                                        <div class="row">
+                                            <i class="far fa-image"></i> <i class="far fa-image"></i>
+                                        </div>
+                                        <div class="row">
+                                            <i class="far fa-image"></i> <i class="far fa-image"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="center">
+                                        <h1 class="p-shop-name">Parrilla Don Julio</h5>
+                                        <p class="p-phone">011 4832-6058</p>
+                                        <p class="p-addres">Guatemala 4699, C1425 CABA</p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <ul class="logos">
+                                        <i class="fab fa-instagram"></i>
+                                        <i class="fab fa-facebook"></i>
+                                        <i class="far fa-envelope"></i>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="row border-bottom mb-4 mt-2">
+                                    <div class="rowTab">
+                                      <div class="description">
+                                         <h4>Descripción</h4>            
+                                         <p class="p-description"></p>
+                                        </div>           
+                                      </div>
+                                      </div>
+                                    <div class="row border-bottom mb-4 mt-2">
+                                      <h4>Reviews</h4>
+                                    </div>
+                                        <div class="row">
+                                        <div class="reviews">
+
+                                        </div>
+                                        <div class="row border-bottom mb-4 mt-2 ml-2">
+                                          <div class="addReview">
+                                            <button class="home-btn btn btn-primary">Add review</button>
+                                            </div>
+                                        </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../controllers/shops.js"></script>
+    <script src="../controllers/controller-form.js"></script>
+    <script src="../controllers/mapa.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC4tXl9KhBI-c80pRQR6PjvMp_3ae6nNTY&libraries=places&language=es&callback=inicializarMapa" async defer></script>
+    <script src="../controllers/modals.js"></script>
+
 </body>
 
 </html>

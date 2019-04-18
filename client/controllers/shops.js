@@ -4,43 +4,27 @@ $(document).ready(() => {
   var infowindow = null;
   var marker;
   getShops = () => {
-    $.ajax({
-      method: "GET",
-      url: serverUrl + "locales/",
-      success: function(data) {
-        renderList(JSON.parse(data));
-      }
-    });
+    getShopList(renderList);
   };
-  getReviews = (shopData, id) => {
-    $.ajax({
-      method: "GET",
-      url: serverUrl + "reviews/shop/" + id,
-      success: function(reviews) {
-        createShopModal(JSON.parse(shopData), reviews);
-      }
-    });
+  getReviews =  async (shopData, id) => {
+    getShopReviews(id, shopData, createShopModal);
   };
+  
   getShop = id => {
-    $.ajax({
-      method: "GET",
-      url: serverUrl + "locales/" + id,
-      success: function(data) {
-        getReviews(data, id);
-      }
-    });
+    getShopData(id, getReviews);
   };
-
-  $(document).ajaxError((event, request, settings) => {
-    console.log("Error requesting page: " + settings.url);
-  });
 
   renderList = data => {
     data.forEach(shop => {
       addShopToList(shop);
-      markShops(shop);
     });
   };
+
+  markShops = (data) => {
+    data.forEach(shop => {
+      markShopsMap(shop);
+    });
+  }
 
   addShopToList = data => {
     let $modal = $("#modal-row").clone(true);
@@ -75,7 +59,6 @@ $(document).ready(() => {
       $review.find(".review-author").text("Author: " + elem.user);
       $review.css("display","block");
       $(".reviews").append($review);
-      console.log(elem.user, elem.score, elem.comment, elem.date);
     }
     modalShop.style.display = "block";
   }
@@ -89,7 +72,7 @@ $(document).ready(() => {
     }
   };
 
-  markShops = data => {
+  markShopsMap = data => {
     let latLong = {
       lat: data.lat,
       lng: data.lon
@@ -125,5 +108,7 @@ $(document).ready(() => {
     });
   };
 
-  getShops();
+  $(document).ajaxError((event, request, settings) => {
+    console.log("Error requesting page: " + settings.url);
+  });
 });

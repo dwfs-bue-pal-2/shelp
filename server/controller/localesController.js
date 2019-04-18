@@ -20,7 +20,7 @@ function Controller() {
 
   this.post = async (req, res) => {
     var result = await srv.post(req, res);
-    res.status(200).send(JSON.stringify(result));
+    res.status(200).json((result));
   };
 
   this.put = async (req, res) => {
